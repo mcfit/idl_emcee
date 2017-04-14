@@ -4,7 +4,7 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot
 ;     emcee_func_erros
 ; 
 ; PURPOSE:
-;     return the uncertainties of function outputs based on
+;     return the uncertainties of the function outputs based on
 ;     the confidence level
 ; 
 ; EXPLANATION:
@@ -33,7 +33,7 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot
 ;              clevel=0.999999998; 6.0-sigma
 ;     do_plot - plot a normalized histogram of the MCMC chain
 ; 
-; RETURN:  the initialized walker
+; RETURN:  the function output uncertainties
 ; 
 ; REVISION HISTORY:
 ;     Adopted from chain_hist() of sl_emcee by M.A. Nowak, included in isisscripts
