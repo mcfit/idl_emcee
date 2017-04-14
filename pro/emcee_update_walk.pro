@@ -37,7 +37,7 @@ function emcee_update_walk, fcn, random_num, x_a, x_b, $
   b_num=temp[1]
   x_chosen = x_b[*,long(random_num[0]*b_num)]
   ; print, long(random_num[0]*b_num)
-  z = inv_tot_dist(random_num[1],adjust_scale_low,adjust_scale_high);
+  z = emcee_inv_tot_dist(random_num[1],adjust_scale_low,adjust_scale_high);
   x_chosen = x_chosen + z*(x_a-x_chosen)
   st1 = keyword_set(par2) and not keyword_set(par3) and not keyword_set(par4) and not keyword_set(par5) and $
         not keyword_set(par6) and not keyword_set(par7) and not keyword_set(par8) and not keyword_set(par9) 

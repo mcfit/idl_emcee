@@ -83,7 +83,7 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot
       ;print, result, sim1_lo-result, sim1_hi-result
       ;pdf_normalize=pdf_n_fine/bin_fine/ntot
       ;plot,lo_fine,pdf_normalize/max(pdf_normalize)
-      if keyword_set(do_plot2) then begin
+      if keyword_set(do_plot) then begin
         plothist, sim1, bin=bin_fine
       endif
     endif else begin
