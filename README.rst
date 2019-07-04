@@ -1,6 +1,14 @@
 =========
 idl_emcee
 =========
+    
+.. image:: https://travis-ci.org/mcfit/idl_emcee.svg?branch=master
+    :target: https://travis-ci.org/mcfit/idl_emcee
+    :alt: Build Status
+
+.. image:: https://ci.appveyor.com/api/projects/status/52mh7p2qfa2qnu30?svg=true
+    :target: https://ci.appveyor.com/project/danehkar/idl-emcee
+    :alt: Build Status
 
 .. image:: http://mybinder.org/badge.svg
     :target: http://mybinder.org/repo/mcfit/idl_emcee
@@ -15,7 +23,7 @@ idl_emcee
 Description
 ============
 
-**idl_emcee** is an `Interactive Data Language <http://www.harrisgeospatial.com/ProductsandSolutions/GeospatialProducts/IDL.aspx>`_ (IDL)/`GNU Data Language <http://gnudatalanguage.sourceforge.net/>`_ (GDL) implementation of the *affine-invariant Markov chain Monte Carlo (MCMC) ensemble sampler* by A. Danehkar, based on `sl_emcee <https://github.com/mcfit/sl_emcee>`_ by `M. A. Nowak <http://space.mit.edu/home/mnowak/isis_vs_xspec/>`_, an S-Lang/`ISIS <http://space.mit.edu/cxc/isis/>`_ implementation of the MCMC Hammer proposed by `Goodman & Weare (2010) <http://dx.doi.org/10.2140/camcos.2010.5.65>`_, and then implemented in Python (`emcee <https://github.com/dfm/emcee>`_) by `Foreman-Mackey et al. (2013) <http://adsabs.harvard.edu/abs/2013PASP..125..306F>`_. 
+**idl_emcee** is an `Interactive Data Language <http://www.harrisgeospatial.com/ProductsandSolutions/GeospatialProducts/IDL.aspx>`_ (IDL)/`GNU Data Language <http://gnudatalanguage.sourceforge.net/>`_ (GDL) implementation of the *affine-invariant Markov chain Monte Carlo (MCMC) ensemble sampler*, based on `sl_emcee <https://github.com/mcfit/sl_emcee>`_ by `M. A. Nowak <http://space.mit.edu/home/mnowak/isis_vs_xspec/>`_, an S-Lang/`ISIS <http://space.mit.edu/cxc/isis/>`_ implementation of the MCMC Hammer proposed by `Goodman & Weare (2010) <http://dx.doi.org/10.2140/camcos.2010.5.65>`_, and then implemented in Python (`emcee <https://github.com/dfm/emcee>`_) by `Foreman-Mackey et al. (2013) <http://adsabs.harvard.edu/abs/2013PASP..125..306F>`_. 
 
 Installation
 ============
@@ -24,7 +32,7 @@ Installation
 
         git clone https://github.com/mcfit/idl_emcee
 
-* This package does not include any dependent packages in the preset version.
+* This package does not include any dependent packages in the current version.
 
 Installation in IDL
 -------------------
