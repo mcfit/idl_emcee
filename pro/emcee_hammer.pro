@@ -1,46 +1,85 @@
+; docformat = 'rst'
+
 function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
                       walk_num, iteration_num, use_gaussian, $
                       par2=par2, par3=par3, par4=par4, par5=par5, $
                       par6=par6, par7=par7, par8=par8, par9=par9
 ;+
-; NAME:
-;     emcee_hammer
-; 
-; PURPOSE:
-;     run the affine-invariant MCMC Hammer, and return the MCMC simulations
-; 
-; EXPLANATION:
+;     This function runs the affine-invariant MCMC Hammer, 
+;     and returns the MCMC simulations
 ;
-; CALLING SEQUENCE:
-;     mcmc_sim=emcee_hammer('myfunc', input, input_err, output, walk_num, iteration_num, use_gaussian)
+; :Returns:
+;    type=arrays. This function returns the results of the MCMC simulations.
 ;
-; INPUTS:
-;     fcn  - the calling function name
-;     input  - the input parameters array used by the calling function
-;     input_err_m - the lower limit uncertainty array of the parameters 
-;                   for the calling function
-;     input_err_p - the upper limit uncertainty array of the parameters 
-;                   for the calling function
-;     output - the output array returned by the calling function
-;     walk_num - the number of the random walkers 
-;     iteration_num - the number of the MCMC iteration
-;     use_gaussian - if sets to 1, the walkers are initialized as a gaussian 
-;                    over the specified range between the min and max values of 
-;                    each free parameter, 
-;                    otherwise, the walkers are initialized uniformly over 
-;                    the specified range between the min and max values of 
-;                    each free parameter
-;     par2 - the second fixed parameters (not used for MCMC)
-;     par3 - the thrid fixed parameters (not used for MCMC)
-;     parx - the x-th fixed parameters (not used for MCMC)
-; 
-; RETURN:  the results of the MCMC simulations
-; 
-; REVISION HISTORY:
-;     Adopted from emcee() of sl_emcee by M.A. Nowak, included in isisscripts
-;     IDL code by A. Danehkar, 15/03/2017
+; :Keywords:
+;     par2         :  in, not required, type=parameter
+;                     the second fixed parameters (not used for MCMC)
+;
+;     par3         :  in, not required, type=parameter
+;                     the thrid fixed parameters (not used for MCMC)
+;
+;     parx         :  in, not required, type=parameter
+;                     the x-th fixed parameters (not used for MCMC)
+;
+; :Params:
+;     fcn          :  in, required, type=string
+;                     the calling function name
+;
+;     input        :  in, required, type=float
+;                     the input parameters array used by the calling function.
+;
+;     input_err_m  :  in, required, type=float
+;                     the lower limit uncertainty array of the parameters 
+;                     for the calling function.
+;
+;     input_err_p  :  in, required, type=float
+;                     the upper limit uncertainty array of the parameters 
+;                     for the calling function.
+;
+;     output       :  in, required, type=arrays
+;                     the output array returned by the calling function.
+;
+;     walk_num     :  in, required, type=integer
+;                     the number of the random walkers 
+;
+;     iteration_num:  in, required, type=integer
+;                     the number of the MCMC iteration
+;
+;     use_gaussian  :  in, required, type=boolean
+;                      if sets to 1, the walkers are initialized as a gaussian 
+;                      over the specified range between the min and max values of 
+;                      each free parameter, 
+;                      otherwise, the walkers are initialized uniformly over 
+;                      the specified range between the min and max values of 
+;                      each free parameter.
+;    
+; :Examples:
+;    For example::
+;
+;     IDL> mcmc_sim=emcee_hammer('myfunc', input, input_err, output, $
+;     IDL>                        walk_num, iteration_num, use_gaussian)
+;
+; :Categories:
+;   MCMC
+;
+; :Dirs:
+;  ./
+;      Main routines
+;
+; :Author:
+;   Ashkbiz Danehkar
+;
+; :Copyright:
+;   This library is released under a GNU General Public License.
+;
+; :Version:
+;   0.1.0
+;
+; :History:
+;     15/03/2017, A. Danehkar, IDL code written
+;                 Adopted from emcee() of sl_emcee 
+;                 by M.A. Nowak included in isisscripts
 ;-
-
   temp=size(output,/DIMENSIONS)
   output_num=temp[0]
   x_walk=emcee_initialize(fcn, input, input_err_m, input_err_p, $

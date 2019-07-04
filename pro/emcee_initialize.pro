@@ -1,46 +1,85 @@
+; docformat = 'rst'
+
 function emcee_initialize, fcn, param, param_err_m, param_err_p, $
                           walk_num, output_num, use_gaussian, $
                           par2=par2, par3=par3, par4=par4, par5=par5, $
                           par6=par6, par7=par7, par8=par8, par9=par9
-                           ;, x_ou
 ;+
-; NAME:
-;     emcee_initialize
-; 
-; PURPOSE:
-;     return the initialized walkers for each free parameter
-; 
-; EXPLANATION:
+;     This function returne the initialized walkers for each free parameter.
 ;
-; CALLING SEQUENCE:
-;     x_walk=emcee_initialize(fcn, input, input_err, walk_num, output_num, use_gaussian)
+; :Returns:
+;    type=arrays. This function returns the initialized walker.
 ;
-; INPUTS:
-;     fcn  - the calling function name
-;     param  - the input parameters array used by the calling function
-;     param_err_m - the lower limit uncertainty array of the parameters 
-;                   for the calling function
-;     param_err_p - the upper limit uncertainty array of the parameters 
-;                   for the calling function
-;     walk_num - the number of the walkers 
-;     output_num - the number of the output array returned by the calling function
-;     use_gaussian - if sets to 1, the walkers are initialized as a gaussian 
-;                    over the specified range between the min and max values of 
-;                    each free parameter, 
-;                    otherwise, the walkers are initialized uniformly over 
-;                    the specified range between the min and max values of 
-;                    each free parameter
-;     par2 - the second fixed parameters (not used for MCMC)
-;     par3 - the thrid fixed parameters (not used for MCMC)
-;     parx - the x-th fixed parameters (not used for MCMC)
-; 
-; RETURN:  the initialized walker
-; 
-; REVISION HISTORY:
-;     Adopted from init_walker() of sl_emcee by M.A. Nowak, included in isisscripts
-;     IDL code by A. Danehkar, 15/03/2017
+; :Keywords:
+;     par2         :  in, not required, type=parameter
+;                     the second fixed parameters (not used for MCMC)
+;
+;     par3         :  in, not required, type=parameter
+;                     the thrid fixed parameters (not used for MCMC)
+;
+;     parx         :  in, not required, type=parameter
+;                     the x-th fixed parameters (not used for MCMC)
+;
+; :Params:
+;     fcn          :  in, required, type=string
+;                     the calling function name
+;
+;     param        :  in, required, type=arrays
+;                     the input parameters array used by 
+;                     the calling function.
+;
+;     param_err_m  :  in, required, type=arrays 
+;                     the lower limit uncertainty array of
+;                      the parameters for the calling function.
+;
+;     param_err_p  :  in, required, type=arrays
+;                     the upper limit uncertainty array of 
+;                      the parameters for the calling function.
+;
+;     walk_num     :  in, required, type=integer
+;                     the number of the random walkers.
+;
+;     output_num   :  in, required, type=integer
+;                     the number of the output array returned 
+;                     by the calling function.
+;
+;     use_gaussian  :  in, required, type=boolean
+;                      if sets to 1, the walkers are initialized as a gaussian 
+;                      over the specified range between the min and max values of 
+;                      each free parameter, 
+;                      otherwise, the walkers are initialized uniformly over 
+;                      the specified range between the min and max values of 
+;                      each free parameter.
+;    
+; :Examples:
+;    For example::
+;
+;     IDL> x_walk=emcee_initialize(fcn, input, input_err, walk_num, $
+;     IDL>                         output_num, use_gaussian))
+;
+; :Categories:
+;   MCMC
+;
+; :Dirs:
+;  ./
+;      Main routines
+;
+; :Author:
+;   Ashkbiz Danehkar
+;
+; :Copyright:
+;   This library is released under a GNU General Public License.
+;
+; :Version:
+;   0.1.0
+;
+; :History:
+;     15/03/2017, A. Danehkar, IDL code written
+;                 Adopted from emcee() of sl_emcee 
+;                 by M.A. Nowak included in isisscripts
 ;-
 
+;, x_ou
   temp=size(param,/DIMENSIONS)
   param_num=temp[0]
   x_point=dblarr(param_num)

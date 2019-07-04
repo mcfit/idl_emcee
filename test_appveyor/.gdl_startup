@@ -1,0 +1,4 @@
+!PATH=!PATH + ':/home/appveyor/projects/idl_emcee/pro/'
+!DIR='/home/appveyor/projects/idl_emcee/'
+print, '%** Personal settings are loaded and active **';
+

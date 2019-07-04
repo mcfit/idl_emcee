@@ -1,35 +1,68 @@
+; docformat = 'rst'
+
 function emcee_update_walk, fcn, random_num, x_a, x_b, $
                       par2=par2, par3=par3, par4=par4, par5=par5, $
                       par6=par6, par7=par7, par8=par8, par9=par9
-;, x_input, x_output, change_done
 ;+
-; NAME:
-;     emcee_update_walk
-; 
-; PURPOSE:
-;     create the trial walker, examine whether it is acceptable, and 
-;     return the updated walker
-; 
-; EXPLANATION:
+;     This function creates the trial walker, examines 
+;     whether it is acceptable, and returns the updated walker.
 ;
-; CALLING SEQUENCE:
-;     x_output[j,*]=emcee_update_walk(fcn,a_random[random_num[j],*],array_xwalk,x_walk[*,b_walk])
+; :Returns:
+;    type=arrays. This function returns the updated walker.
 ;
-; INPUTS:
-;     fcn  - the calling function name
-;     random_num  - the random number
-;     x_a - the vector of the parameters for a specific walker
-;     x_b - the array of the walker parameters
-;     par2 - the second fixed parameters (not used for MCMC)
-;     par3 - the thrid fixed parameters (not used for MCMC)
-;     parx - the x-th fixed parameters (not used for MCM
-; 
-; RETURN:  the updated walker
-; 
-; REVISION HISTORY:
-;     Adopted from update_walker() of sl_emcee by M.A. Nowak, included in isisscripts
-;     IDL code by A. Danehkar, 15/03/2017
-; 
+; :Keywords:
+;     par2         :  in, optional, type=parameter
+;                     the second fixed parameters
+;
+;     par3         :  in, optional, type=parameter
+;                     the thrid fixed parameters
+;
+;     parx         :  in, optional, type=parameter
+;                     the x-th fixed parameters
+;
+; :Params:
+;     fcn          :  in, required, type=string
+;                     the calling function name.
+;
+;     random_num   :  in, required, type=integer
+;                     the random number.
+;
+;     x_a          :  in, required, type=arrays
+;                     the vector of the parameters 
+;                     for a specific walker.
+;
+;     x_b          :  in, required, type=arrays
+;                     the array of the walker parameters.
+;
+; :Examples:
+;    For example::
+;
+;     IDL> x_output[j,*]=emcee_update_walk(fcn,a_random[random_num[j],*],$
+;     IDL>                                 array_xwalk,x_walk[*,b_walk])
+;
+; :Categories:
+;   MCMC
+;
+; :Dirs:
+;  ./
+;      Main routines
+;
+; :Author:
+;   Ashkbiz Danehkar
+;
+; :Copyright:
+;   This library is released under a GNU General Public License.
+;
+; :Version:
+;   0.1.0
+;
+; :History:
+;     15/03/2017, A. Danehkar, IDL code written
+;                 Adopted from update_walker() of sl_emcee 
+;                 by M.A. Nowak included in isisscripts
+;-
+
+;, x_input, x_output, change_done
   adjust_scale_low = 2.0
   adjust_scale_high = 2.0
   temp=size(x_b,/DIMENSIONS)

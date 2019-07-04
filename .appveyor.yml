@@ -1,0 +1,19 @@
+image:
+#- Visual Studio 2017
+- Ubuntu
+
+clone_depth: 3
+
+build: off
+
+init:
+- sh: sudo apt-get -yq update > /dev/null
+- sh: sudo apt-get install -yq --no-install-suggests --no-install-recommends gnudatalanguage > /dev/null
+
+install:
+  - export DISPLAY=':99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+  - git submodule update --init --recursive
+  - export GDL_STARTUP=/home/appveyor/projects/idl_emcee/test_appveyor/.gdl_startup
+
+

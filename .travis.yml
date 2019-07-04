@@ -1,0 +1,27 @@
+language: generic
+sudo: required
+dist: xenial
+group: travis_latest
+
+git:
+  depth: 3
+  quiet: true
+
+os:
+- linux
+
+#addons:
+#  apt:
+#    packages:
+#      - gnudatalanguage
+
+
+# FIXME: temporary for travis xenial
+before_install:
+- sudo apt-get -yq update > /dev/null
+- sudo apt-get install -yq --no-install-suggests --no-install-recommends gnudatalanguage > /dev/null
+
+install:
+- export GDL_STARTUP=/home/travis/build/mcfit/idl_emcee/test_travis/.gdl_startup
+
+

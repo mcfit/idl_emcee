@@ -1,0 +1,4 @@
+!PATH=!PATH + ':/home/travis/build/mcfit/idl_emcee/pro/
+!DIR='/home/travis/build/mcfit/idl_emcee/'
+print, '%** Personal settings are loaded and active **';
+

@@ -1,45 +1,68 @@
+; docformat = 'rst'
+
 function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot
 ;+
-; NAME:
-;     emcee_func_erros
-; 
-; PURPOSE:
-;     return the uncertainties of the function outputs based on
-;     the confidence level
-; 
-; EXPLANATION:
+;     This function returns the uncertainties of the function outputs 
+;     based on the confidence level.
 ;
-; CALLING SEQUENCE:
-;     output_error=emcee_func_erros(output, mcmc_sim, clevel)
+; :Returns:
+;    type=arrays. This function returns uncertainties.
 ;
-; INPUTS:
-;     output  - the output array returned by the calling function
-;     mcmc_sim  - the results of the MCMC simulations from emcee_hammer()
-;     clevel - the confidence level for the the lower and upper limits
-;              clevel=0.38292492 ; 0.5-sigma
-;              clevel=0.68268949 ; 1.0-sigma
-;              clevel=0.86638560 ; 1.5-sigma
-;              clevel=0.90       ; 1.645-sigma
-;              clevel=0.95       ; 1.960-sigma
-;              clevel=0.95449974 ; 2.0-sigma
-;              clevel=0.98758067 ; 2.5-sigma
-;              clevel=0.99       ; 2.575-sigma
-;              clevel=0.99730020 ; 3.0-sigma
-;              clevel=0.99953474 ; 3.5-sigma
-;              clevel=0.99993666 ; 4.0-sigma
-;              clevel=0.99999320 ; 4.5-sigma
-;              clevel=0.99999943 ; 5.0-sigma
-;              clevel=0.99999996 ; 5.5-sigma
-;              clevel=0.999999998; 6.0-sigma
-;     do_plot - plot a normalized histogram of the MCMC chain
-; 
-; RETURN:  the function output uncertainties
-; 
-; REVISION HISTORY:
-;     Adopted from chain_hist() of sl_emcee by M.A. Nowak, included in isisscripts
-;     IDL code by A. Danehkar, 15/03/2017
+; :Keywords:
+;     do_plot  :  in, optional, type=boolean
+;                 set to plot a normalized histogram of the MCMC chain
 ;
-
+; :Params:
+;     output   :  in, required, type=arrays   
+;                 the output array returned by the calling function.
+;     
+;     mcmc_sim :  in, required, type=arrays  
+;                 the results of the MCMC simulations from emcee_hammer().
+;     
+;     clevel   :  in, required, type=float
+;                 the confidence level for the the lower and upper limits. 
+;                 clevel=0.38292492 ; 0.5-sigma, 
+;                 clevel=0.68268949 ; 1.0-sigma, 
+;                 clevel=0.86638560 ; 1.5-sigma, 
+;                 clevel=0.90       ; 1.645-sigma, 
+;                 clevel=0.95       ; 1.960-sigma, 
+;                 clevel=0.95449974 ; 2.0-sigma, 
+;                 clevel=0.98758067 ; 2.5-sigma, 
+;                 clevel=0.99       ; 2.575-sigma, 
+;                 clevel=0.99730020 ; 3.0-sigma, 
+;                 clevel=0.99953474 ; 3.5-sigma, 
+;                 clevel=0.99993666 ; 4.0-sigma, 
+;                 clevel=0.99999320 ; 4.5-sigma, 
+;                 clevel=0.99999943 ; 5.0-sigma, 
+;                 clevel=0.99999996 ; 5.5-sigma, 
+;                 clevel=0.999999998; 6.0-sigma.
+;    
+; :Examples:
+;    For example::
+;
+;     IDL> output_error=emcee_func_erros(output, mcmc_sim, clevel)
+;
+; :Categories:
+;   MCMC, Uncertainty
+;
+; :Dirs:
+;  ./
+;      Main routines
+;
+; :Author:
+;   Ashkbiz Danehkar
+;
+; :Copyright:
+;   This library is released under a GNU General Public License.
+;
+; :Version:
+;   0.1.0
+;
+; :History:
+;     15/03/2017, A. Danehkar, IDL code written
+;                 Adopted from chain_hist() of sl_emcee 
+;                 by M.A. Nowak included in isisscripts
+;-
   nbins=50.
   
   temp=size(output,/DIMENSIONS)
