@@ -2,8 +2,7 @@
 
 function emcee_initialize, fcn, param, param_err_m, param_err_p, $
                           walk_num, output_num, use_gaussian, $
-                          par2=par2, par3=par3, par4=par4, par5=par5, $
-                          par6=par6, par7=par7, par8=par8, par9=par9
+                          FUNCTARGS=fcnargs
 ;+
 ;     This function returne the initialized walkers for each free parameter.
 ;
@@ -11,14 +10,9 @@ function emcee_initialize, fcn, param, param_err_m, param_err_p, $
 ;    type=arrays. This function returns the initialized walker.
 ;
 ; :Keywords:
-;     par2         :  in, not required, type=parameter
-;                     the second fixed parameters (not used for MCMC)
+;     FUNCTARGS    :  in, not required, type=parameter
+;                     the function arguments (not used for MCMC)
 ;
-;     par3         :  in, not required, type=parameter
-;                     the thrid fixed parameters (not used for MCMC)
-;
-;     parx         :  in, not required, type=parameter
-;                     the x-th fixed parameters (not used for MCMC)
 ;
 ; :Params:
 ;     fcn          :  in, required, type=string
@@ -77,9 +71,9 @@ function emcee_initialize, fcn, param, param_err_m, param_err_p, $
 ;     15/03/2017, A. Danehkar, IDL code written
 ;                 Adopted from emcee() of sl_emcee 
 ;                 by M.A. Nowak included in isisscripts
+;
+;     01/05/2020, A. Danehkar, function arguments added 
 ;-
-
-;, x_ou
   temp=size(param,/DIMENSIONS)
   param_num=temp[0]
   x_point=dblarr(param_num)
@@ -94,6 +88,7 @@ function emcee_initialize, fcn, param, param_err_m, param_err_p, $
     ;x_low[i]   = param[i]-param_err[i]
     ;x_high[i]  = param[i]+param_err[i]
   endfor
+  use_gaussian=1
   if use_gaussian eq 1 then begin
     scale1=1./3.
   endif else begin

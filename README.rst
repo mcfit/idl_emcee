@@ -30,7 +30,7 @@ Installation
  
 * To get this package, you can simply use ``git`` command as follows::
 
-        git clone https://github.com/mcfit/idl_emcee
+        git clone --recursive https://github.com/mcfit/idl_emcee.git
 
 * This package does not include any dependent packages in the current version.
 
@@ -55,10 +55,17 @@ Installation in GDL
     
         sudo apt-get install gnudatalanguage
     
-    - OS X::
-    
+    - OS X (`brew <https://brew.sh/>`_)::
+
+        brew tap brewsci/science
         brew install gnudatalanguage
-    
+
+    - OS X (`macports <https://www.macports.org/>`_)::
+
+        sudo port selfupdate
+        sudo port upgrade libtool
+        sudo port install gnudatalanguage
+        
     - Windows: You can use the `GNU Data Language for Win32 <https://sourceforge.net/projects/gnudatalanguage-win32/>`_ (Unofficial Version) or you can compile the `GitHub source <https://github.com/gnudatalanguage/gdl>`_ using Visual Studio 2015 as shown in `appveyor.yml <https://github.com/gnudatalanguage/gdl/blob/master/appveyor.yml>`_.
 
 * To install the **idl_emcee** library in GDL, you need to add the path of this package directory to your ``.gdl_startup`` file in your home directory::
@@ -74,4 +81,10 @@ Installation in GDL
     setenv GDL_STARTUP ~/.gdl_startup
 
 * This package requires GDL version 0.9.8 or later.
+
+Documentation
+=============
+
+For more information on how to use the API functions from the idl_emcee libray, please read the `API Documentation  <https://mcfit.github.io/idl_emcee/doc>`_ published on `mcfit.github.io/idl_emcee <https://mcfit.github.io/idl_emcee>`_.
+
 

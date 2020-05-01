@@ -51,5 +51,5 @@ pro emcee_linear_grid, x_min, x_max, nbins, hist_lo, hist_hi
 
   step=(double(x_max)-double(x_min))/double(nbins)
   hist_lo=double(indgen(nbins)*step + x_min)
-  hist_hi=double((indgen(nbins)+1)*step + x_min)
+  hist_hi=double((indgen(nbins)+1.)*step + x_min)
 end

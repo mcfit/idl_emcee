@@ -2,8 +2,7 @@
 
 function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
                       walk_num, iteration_num, use_gaussian, $
-                      par2=par2, par3=par3, par4=par4, par5=par5, $
-                      par6=par6, par7=par7, par8=par8, par9=par9
+                      FUNCTARGS=fcnargs
 ;+
 ;     This function runs the affine-invariant MCMC Hammer, 
 ;     and returns the MCMC simulations
@@ -12,14 +11,8 @@ function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
 ;    type=arrays. This function returns the results of the MCMC simulations.
 ;
 ; :Keywords:
-;     par2         :  in, not required, type=parameter
-;                     the second fixed parameters (not used for MCMC)
-;
-;     par3         :  in, not required, type=parameter
-;                     the thrid fixed parameters (not used for MCMC)
-;
-;     parx         :  in, not required, type=parameter
-;                     the x-th fixed parameters (not used for MCMC)
+;     FUNCTARGS    :  in, not required, type=parameter
+;                     the function arguments (not used for MCMC)
 ;
 ; :Params:
 ;     fcn          :  in, required, type=string
@@ -79,15 +72,14 @@ function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
 ;     15/03/2017, A. Danehkar, IDL code written
 ;                 Adopted from emcee() of sl_emcee 
 ;                 by M.A. Nowak included in isisscripts
+;
+;     01/05/2020, A. Danehkar, function arguments added 
 ;-
   temp=size(output,/DIMENSIONS)
   output_num=temp[0]
   x_walk=emcee_initialize(fcn, input, input_err_m, input_err_p, $
                         walk_num, output_num, use_gaussian, $
-                        par2=par2, par3=par3, par4=par4, par5=par5, $
-                        par6=par6, par7=par7, par8=par8, par9=par9)
-                        ;par2=par2, par3=par3, par4, par5, par6, par7, par8, par9);, x_prior)
-  
+                        FUNCTARGS=fcnargs)
   temp=size(input,/DIMENSIONS)
   input_num=temp[0]
     
@@ -124,8 +116,7 @@ function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
     for j=0L, a_num-1 do begin
        array_xwalk= x_walk[*,a_walk[j]]
        x_output[j,*]=emcee_update_walk(fcn,a_random[random_num[j],*],array_xwalk,x_walk[*,b_walk], $
-                        par2=par2, par3=par3, par4=par4, par5=par5, $
-                        par6=par6, par7=par7, par8=par8, par9=par9)
+                        FUNCTARGS=fcnargs)
     endfor
     for j=0L, a_num-1 do begin
        x_out[a_walk[j],*] = x_output[j,*];
@@ -135,8 +126,7 @@ function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
     for j=0L, b_num-1 do begin
        array_xwalk= x_walk[*,b_walk[j]]
        x_output[j,*]=emcee_update_walk(fcn,b_random[random_num[j],*],array_xwalk,x_walk[*,a_walk], $
-                        par2=par2, par3=par3, par4=par4, par5=par5, $
-                        par6=par6, par7=par7, par8=par8, par9=par9)
+                        FUNCTARGS=fcnargs)
     endfor
     for j=0L, b_num-1 do begin
        x_out[b_walk[j],*] = x_output[j,*];
