@@ -1,0 +1,11 @@
+digraph callgraph {
+  page="8.5,11"
+  node[fontsize=8,color=gray,fontcolor=grey]
+  edge[color=gray]
+  emcee_linear_grid[fontcolor=black,shape=plaintext]
+  emcee_update_walk[fontcolor=black,shape=plaintext]
+  emcee_initialize[fontcolor=black,shape=plaintext]
+  emcee_inv_tot_dist[fontcolor=black,shape=plaintext]
+  emcee_hammer[fontcolor=black,shape=plaintext]
+  emcee_func_erros[fontcolor=black,shape=plaintext]
+}
