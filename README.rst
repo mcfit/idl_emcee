@@ -111,7 +111,7 @@ and specify the number of walkers and the number of iterations::
     walk_num=30
     iteration_num=100
 
-Now you define the MCMC sample for the given upper and lower uncertainties of the input parameters:
+Now you define the MCMC sample for the given upper and lower uncertainties of the input parameters::
 
     input=[1. , 2.]
     input_err=[0.2, 0.5]
@@ -121,11 +121,13 @@ Now you define the MCMC sample for the given upper and lower uncertainties of th
     temp=size(output,/DIMENSIONS)
     output_num=temp[0]
 
-and propagates the uncertainties of the input parameters into your defined functions.
+and propagates the uncertainties of the input parameters into your defined functions::
 
-    mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, input_err_p, output, walk_num, iteration_num, use_gaussian)
+    mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, $
+                          input_err_p, output, walk_num, $
+                          iteration_num, use_gaussian)
 
-and determine the upper and lower errors of the function outputs: 
+and determine the upper and lower errors of the function outputs:: 
 
     output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1)
     for i=0, output_num-1 do begin
