@@ -1,0 +1,66 @@
+.. title:: idl-emcee Overview
+
+`idl_emcee <https://mcfit.github.io/idl_emcee>` is an `Interactive Data Language <http://www.harrisgeospatial.com/ProductsandSolutions/GeospatialProducts/IDL.aspx>` (IDL)/`GNU Data Language <http://gnudatalanguage.sourceforge.net/>` (GDL) implementation of the `affine-invariant Markov chain Monte Carlo (MCMC) ensemble sampler`, based on `sl_emcee <https://github.com/mcfit/sl_emcee>` by `M. A. Nowak <http://space.mit.edu/home/mnowak/isis_vs_xspec/>`, an S-Lang/`ISIS <http://space.mit.edu/cxc/isis/>` implementation of the MCMC Hammer proposed by `Goodman & Weare (2010) <http://dx.doi.org/10.2140/camcos.2010.5.65>`, and then implemented in Python (`emcee <https://github.com/dfm/emcee>`) by `Foreman-Mackey et al. (2013) <http://adsabs.harvard.edu/abs/2013PASP..125..306F>`. 
+
+
+Dependencies
+------------
+
+* This package requires the following packages:
+
+    - `The IDL Astronomy User's Library <https://idlastro.gsfc.nasa.gov/homepage.html>`
+    
+* To get this package with all the dependent packages, you can simply use ``git`` command as follows::
+
+        git clone --recursive https://github.com/mcfit/idl_emcee.git
+
+
+GDL Installation
+----------------
+
+*  The GNU Data Language (GDL) can be installed on
+
+    - Linux (Fedora)::
+
+        sudo dnf install gdl
+    
+    - Linux (Ubuntu)::
+    
+        sudo apt-get install gnudatalanguage
+    
+    - OS X (`brew <https://brew.sh/>`)::
+
+        brew tap brewsci/science
+        brew install gnudatalanguage
+
+    - OS X (`macports <https://www.macports.org/>`)::
+
+        sudo port selfupdate
+        sudo port upgrade libtool
+        sudo port install gnudatalanguage
+    
+    - Windows: using the `GNU Data Language for Win32 <https://sourceforge.net/projects/gnudatalanguage-win32/>` (Unofficial Version) or compiling the `GitHub source <https://github.com/gnudatalanguage/gdl>` with Visual Studio 2015 as seen in `appveyor.yml <https://github.com/gnudatalanguage/gdl/blob/master/appveyor.yml>`.
+
+
+* To setup `idl_emcee <https://mcfit.github.io/idl_emcee>` in GDL, add its path to ``.gdl_startup`` in the home directory::
+
+    !PATH=!PATH + ':/home/idl_emcee/pro/'
+
+  Set ``GDL_STARTUP`` in ``.bashrc`` (bash)::
+
+    export GDL_STARTUP=~/.gdl_startup
+
+  or in ``.tcshrc`` (cshrc)::
+
+    setenv GDL_STARTUP ~/.gdl_startup
+
+* This package needs GDL version 0.9.8 or later.
+
+IDL Installation
+----------------
+
+* To install `idl_emcee <https://mcfit.github.io/idl_emcee>` in IDL, add its path to your IDL path. For more information about the path management in IDL, read `the IDL path management <https://www.harrisgeospatial.com/Support/Self-Help-Tools/Help-Articles/Help-Articles-Detail/ArtMID/10220/ArticleID/16156/Quick-tips-for-customizing-your-IDL-program-search-path>` by Harris Geospatial or `the IDL library installation  <http://www.idlcoyote.com/code_tips/installcoyote.php>` by David Fanning. 
+
+* This package needs IDL version 7.1 or later. 
+
+

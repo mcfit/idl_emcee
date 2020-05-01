@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+sitemap: https://mcfit.github.io/idl_emcee/sitemap.xml
+
