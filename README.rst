@@ -96,12 +96,12 @@ You need to define your function. For example::
       return, [result1, result2]
     end
 
-and use the appropriate settings. For example, for 1.645-sigma with uniform distribution::
+and use the appropriate confidence level and uncertainty distribution. For example, for a 1.645-sigma standard deviation with a uniform distribution::
 
     clevel=.9; 1.645-sigma
     use_gaussian=0 ; uniform distribution from min value to max value
 
-for 1-sigma with gaussian distribution::
+for a 1-sigma standard deviation with a Gaussian distribution::
 
     clevel=0.68268949 ; 1.0-sigma
     use_gaussian=1 ; gaussian distribution from min value to max value
@@ -111,7 +111,7 @@ and specify the number of walkers and the number of iterations::
     walk_num=30
     iteration_num=100
 
-Now you define the MCMC sample for the given upper and lower uncertainties of the input parameters::
+Now you provide the given upper and lower uncertainties of the input parameters::
 
     input=[1. , 2.]
     input_err=[0.2, 0.5]
@@ -121,13 +121,13 @@ Now you define the MCMC sample for the given upper and lower uncertainties of th
     temp=size(output,/DIMENSIONS)
     output_num=temp[0]
 
-and propagates the uncertainties of the input parameters into your defined functions::
+You can create the MCMC sample and propagate the uncertainties of the input parameters into your defined functions as follows::
 
     mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, $
                           input_err_p, output, walk_num, $
                           iteration_num, use_gaussian)
 
-and determine the upper and lower errors of the function outputs:: 
+To determine the upper and lower errors of the function outputs, you need to run:: 
 
     output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1)
     for i=0, output_num-1 do begin
