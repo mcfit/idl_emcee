@@ -82,6 +82,74 @@ Installation in GDL
 
 * This package requires GDL version 0.9.8 or later.
 
+
+How to Use
+==========
+
+The Documentation of the IDL functions provides in detail in the *API Documentation* (`mcfit.github.io/idl_emcee/doc <https://mcfit.github.io/idl_emcee/doc>`_). This IDL library creates the MCMC sampling  for given upper and lower uncertainties, and propagates uncertainties of parameters into the function
+
+You need to define your function. For example::
+
+    function myfunc1, input
+      result1 = total(input)
+      result2 = input[1]^input[0]
+      return, [result1, result2]
+    end
+
+and use the appropriate settings. For example, for 1.645-sigma with uniform distribution::
+
+    clevel=.9; 1.645-sigma
+    use_gaussian=0 ; uniform distribution from min value to max value
+
+for 1-sigma with gaussian distribution::
+
+    clevel=0.68268949 ; 1.0-sigma
+    use_gaussian=1 ; gaussian distribution from min value to max value
+
+and specify the number of walkers and the number of iterations::
+
+    walk_num=30
+    iteration_num=100
+
+Now you define the MCMC sample for the given upper and lower uncertainties of the input parameters:
+
+    input=[1. , 2.]
+    input_err=[0.2, 0.5]
+    input_err_p=input_err
+    input_err_m=-input_err
+    output=myfunc1(input)
+    temp=size(output,/DIMENSIONS)
+    output_num=temp[0]
+
+and propagates the uncertainties of the input parameters into your defined functions.
+
+    mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, input_err_p, output, walk_num, iteration_num, use_gaussian)
+
+and determine the upper and lower errors of the function outputs: 
+
+    output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1)
+    for i=0, output_num-1 do begin
+      print, output[i], transpose(output_error[i,*])
+    endfor
+
+For other standard deviation, you should use different confidence levels::
+
+    clevel=0.38292492 ; 0.5-sigma
+    clevel=0.68268949 ; 1.0-sigma
+    clevel=0.86638560 ; 1.5-sigma
+    clevel=0.90       ; 1.645-sigma
+    clevel=0.95       ; 1.960-sigma
+    clevel=0.95449974 ; 2.0-sigma
+    clevel=0.98758067 ; 2.5-sigma
+    clevel=0.99       ; 2.575-sigma
+    clevel=0.99730020 ; 3.0-sigma
+    clevel=0.99953474 ; 3.5-sigma
+    clevel=0.99993666 ; 4.0-sigma
+    clevel=0.99999320 ; 4.5-sigma
+    clevel=0.99999943 ; 5.0-sigma
+    clevel=0.99999996 ; 5.5-sigma
+    clevel=0.999999998; 6.0-sigma
+
 Documentation
 =============
 
