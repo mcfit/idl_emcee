@@ -13,6 +13,9 @@ end
 ; --- Begin $MAIN$ program. ---------------
 ; 
 ; 
+base_dir = file_dirname(file_dirname((routine_info('$MAIN$', /source)).path))
+image_dir = ['examples','images']
+image_output_path = filepath('', root_dir=base_dir, subdir=image_dir )
 
 clevel=.9
 use_gaussian=0 ; uniform distribution from min value to max value
@@ -50,7 +53,7 @@ iteration_num=500
 
 mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, input_err_p, output, walk_num, iteration_num, use_gaussian)
 
-output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1)
+output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1, image_output_path=image_output_path)
 
 for i=0, output_num-1 do begin
   print, output[i], transpose(output_error[i,*])

@@ -130,9 +130,25 @@ You can create the MCMC sample and propagate the uncertainties of the input para
 To determine the upper and lower errors of the function outputs, you need to run:: 
 
     output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1)
+
+which shows the following distribution histograms:
+
+.. image:: https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram0.jpg
+    :width: 100
+
+.. image:: https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram1.jpg
+    :width: 100
+
+To print the results::
+
     for i=0, output_num-1 do begin
       print, output[i], transpose(output_error[i,*])
     endfor
+
+which provide the upper and lower limits on each parameter::
+
+    3.00000     -0.35801017      0.35998471
+    2.00000     -0.37573196      0.36297235
 
 For other standard deviation, you should use different confidence levels::
 
@@ -156,5 +172,4 @@ Documentation
 =============
 
 For more information on how to use the API functions from the idl_emcee libray, please read the `API Documentation  <https://mcfit.github.io/idl_emcee/doc>`_ published on `mcfit.github.io/idl_emcee <https://mcfit.github.io/idl_emcee>`_.
-
 

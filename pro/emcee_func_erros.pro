@@ -1,6 +1,7 @@
 ; docformat = 'rst'
 
-function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot
+function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot, $
+                           image_output_path=image_output_path
 ;+
 ;     This function returns the uncertainties of the function outputs 
 ;     based on the confidence level.
@@ -11,6 +12,9 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot
 ; :Keywords:
 ;     do_plot  :  in, optional, type=boolean
 ;                 set to plot a normalized histogram of the MCMC chain
+;
+;     image_output_path    :    in, optional, type=string
+;                               the image output path
 ;
 ; :Params:
 ;     output   :  in, required, type=arrays   
@@ -108,6 +112,17 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot
       ;plot,lo_fine,pdf_normalize/max(pdf_normalize)
       if keyword_set(do_plot) then begin
         plothist, sim1, bin=bin_fine
+        if keyword_set(image_output_path) eq 1 then begin
+          set_plot,'ps'
+          filename=image_output_path+'/histogram'+strtrim(string(j),1)+'.eps'
+          device, /color, bits_per_pixeL=8, font_size=7, $
+               filename=filename, $
+               encapsulated=1, helvetica=1, bold=1, book=1, $
+               xsize=5.0, ysize=4.0, inches=1
+          loadct,13
+          plothist, sim1, bin=bin_fine
+          device, /close
+        endif
       endif
     endif else begin
       output_error[j,0]=0
