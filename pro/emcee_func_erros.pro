@@ -111,6 +111,8 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot, $
       ;pdf_normalize=pdf_n_fine/bin_fine/ntot
       ;plot,lo_fine,pdf_normalize/max(pdf_normalize)
       if keyword_set(do_plot) then begin
+        set_plot,'x'
+        window, j
         plothist, sim1, bin=bin_fine
         if keyword_set(image_output_path) eq 1 then begin
           set_plot,'ps'
@@ -122,6 +124,7 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot, $
           loadct,13
           plothist, sim1, bin=bin_fine
           device, /close
+          set_plot,'x'
         endif
       endif
     endif else begin
