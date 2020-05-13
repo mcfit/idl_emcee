@@ -10,7 +10,7 @@
 ; :Examples:
 ;    For example::
 ;
-;     IDL> mg=obj_new('emcee')
+;     IDL> mc=obj_new('emcee')
 ;     IDL> mcmc_sim=mc->hammer('myfunc', input, input_err_m, input_err_p, output)
 ;     IDL> output_error=mc->func_erros(output, mcmc_sim)
 ;          
@@ -112,7 +112,7 @@ function emcee::hammer, fcn, input, input_err_m, input_err_p, output, $
 ; :Examples:
 ;    For example::
 ;
-;     IDL> mg=obj_new('emcee')
+;     IDL> mc=obj_new('emcee')
 ;     IDL> mcmc_sim=mc->hammer('myfunc', input, input_err, output, $
 ;     IDL>                      walk_num=walk_num, iteration_num=iteration_num, $
 ;     IDL>                      use_gaussian=use_gaussian)
@@ -201,7 +201,7 @@ function emcee::func_erros, output, mcmc_sim, clevel=clevel, do_plot=do_plot, $
 ; :Examples:
 ;    For example::
 ;
-;     IDL> mg=obj_new('emcee')
+;     IDL> mc=obj_new('emcee')
 ;     IDL> mcmc_sim=mc->hammer('myfunc', input, input_err, output)
 ;     IDL> output_error=mc->func_erros(output, mcmc_sim, clevel=clevel)
 ;
