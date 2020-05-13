@@ -131,7 +131,7 @@ To determine the upper and lower errors of the function outputs, you need to run
 
     output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1)
 
-Alternatively, you could load the **emcee** object class as follows
+Alternatively, you could load the **emcee** object class as follows::
 
     mc=obj_new('emcee')
     mcmc_sim=mc->hammer('myfunc1', input, input_err_m, $
