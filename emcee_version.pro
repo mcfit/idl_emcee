@@ -14,7 +14,7 @@
 function emcee_version, full=full
   compile_opt strictarr, hidden
 
-  version = '0.1.0'
+  version = '0.2.0'
   revision = '-01e10b712'
 
   return, version + (keyword_set(full) ? (' ' + revision) : '')
