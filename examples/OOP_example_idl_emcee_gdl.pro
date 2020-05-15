@@ -1,19 +1,11 @@
-function myfunc1, input
-  result1 = total(input)
-  result2 = input[1]^input[0]
-  return, [result1, result2]
-end
-
-function myfunc2, input, FUNCTARGS=fcnargs
-  result1 = fcnargs.scale1*total(input)
-  result2 = fcnargs.scale2*(input[1]^input[0])
-  return, [result1, result2]
-end
-;    
 ; --- Begin $MAIN$ program. ---------------
 ; 
-; 
-base_dir = file_dirname(file_dirname((routine_info('$MAIN$', /source)).path))
+; Example of object-oriented programming (OOP) for
+;     emcee object
+;
+mc=obj_new('emcee')
+
+base_dir = '../'
 image_dir = ['examples','images']
 image_output_path = filepath('', root_dir=base_dir, subdir=image_dir )
 
@@ -45,17 +37,22 @@ input=[1. , 2.]
 input_err=[0.2, 0.5]
 input_err_p=input_err
 input_err_m=-input_err
-output=myfunc1(input)
+output=myfunc21(input)
 temp=size(output,/DIMENSIONS)
 output_num=temp[0]
 walk_num=30
 iteration_num=500
 
-mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, input_err_p, output, walk_num, iteration_num, use_gaussian)
+mcmc_sim=mc->hammer('myfunc21', input, input_err_m, input_err_p, output, $
+                    walk_num=walk_num, iteration_num=iteration_num, $
+                    use_gaussian=use_gaussian)
 
-output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1, image_output_path=image_output_path)
+output_error=mc->func_erros(output, mcmc_sim, $
+                            clevel=clevel, do_plot=1, $
+                            image_output_path=image_output_path)
 
 for i=0, output_num-1 do print, output[i], transpose(output_error[i,*])
+
 
 input=[1. , 2.]
 input_err=[0.2, 0.5]
@@ -64,18 +61,19 @@ input_err_m=-input_err
 scale1=2.
 scale2=3.
 fcnargs = {scale1:scale1, scale2:scale2}
-output=myfunc2(input, FUNCTARGS=fcnargs)
+output=myfunc22(input, FUNCTARGS=fcnargs)
 temp=size(output,/DIMENSIONS)
 output_num=temp[0]
 walk_num=30
 iteration_num=100
 
-mcmc_sim=emcee_hammer('myfunc2', input, input_err_m, input_err_p, output, walk_num, iteration_num, use_gaussian, FUNCTARGS=fcnargs)
+mcmc_sim=mc->hammer('myfunc22', input, input_err_m, input_err_p, output, $
+                    walk_num=walk_num, iteration_num=iteration_num, $
+                    use_gaussian=use_gaussian, FUNCTARGS=fcnargs)
 
-output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1)
+output_error=mc->func_erros(output, mcmc_sim, clevel=clevel, do_plot=1)
 
 for i=0, output_num-1 do print, output[i], transpose(output_error[i,*])
 
-end
-
+exit
 

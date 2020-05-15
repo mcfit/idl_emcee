@@ -80,7 +80,7 @@ Installation in GDL
 
     setenv GDL_STARTUP ~/.gdl_startup
 
-* This package requires GDL version 0.9.8 or later.
+* This package requires GDL version 0.9.9 or later.
 
 
 How to Use
