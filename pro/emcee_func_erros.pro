@@ -68,11 +68,11 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot, $
 ;                 by M.A. Nowak included in isisscripts
 ;-
   nbins=50.
-  
   temp=size(output,/DIMENSIONS)
   output_num=temp[0]
   output_error=dblarr(output_num,2)
-  
+  if finite(output, /INFINITY) then return, output_error
+    
   for j=0L, output_num-1 do begin
     sim1=mcmc_sim[*,*,j]
     sim1_min=min(sim1)
@@ -91,6 +91,7 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot, $
         
       clevel_start = min(where(cdf_n ge (1.-clevel)/2.))
       clevel_end = min(where(cdf_n gt (1.+clevel)/2.))
+      if clevel_start eq 50 then clevel_start=clevel_start-1
       if clevel_end eq 50 then clevel_end=clevel_end-1
       sim1_lo=lo[clevel_start]
       sim1_hi=hi[clevel_end]
@@ -99,6 +100,7 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot, $
       
       clevel_start = min(where(cdf_n_fine ge (1.-clevel)/2.))
       clevel_end = min(where(cdf_n_fine gt (1.+clevel)/2.))
+      if clevel_start eq 200 then clevel_start=clevel_start-1
       if clevel_end eq 200 then clevel_end=clevel_end-1
       sim1_lo=lo_fine[clevel_start]
       sim1_hi=hi_fine[clevel_end]

@@ -88,7 +88,6 @@ function emcee_initialize, fcn, param, param_err_m, param_err_p, $
     ;x_low[i]   = param[i]-param_err[i]
     ;x_high[i]  = param[i]+param_err[i]
   endfor
-  use_gaussian=1
   if use_gaussian eq 1 then begin
     scale1=1./3.
   endif else begin
