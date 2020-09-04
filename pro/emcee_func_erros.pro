@@ -72,7 +72,7 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot, $
   output_num=temp[0]
   output_error=dblarr(output_num,2)
   if finite(output, /INFINITY) then return, output_error
-    
+  if finite(output, /NAN) then return, output_error
   for j=0L, output_num-1 do begin
     sim1=mcmc_sim[*,*,j]
     sim1_min=min(sim1)
