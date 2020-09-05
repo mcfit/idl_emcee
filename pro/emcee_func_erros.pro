@@ -71,67 +71,70 @@ function emcee_func_erros, output, mcmc_sim, clevel, do_plot=do_plot, $
   temp=size(output,/DIMENSIONS)
   output_num=temp[0]
   output_error=dblarr(output_num,2)
-  if finite(output, /INFINITY) then return, output_error
-  if finite(output, /NAN) then return, output_error
   for j=0L, output_num-1 do begin
-    sim1=mcmc_sim[*,*,j]
-    sim1_min=min(sim1)
-    sim1_max=max(sim1)
-    x_min=sim1_min
-    x_max=sim1_max
-    if x_min ne x_max then begin
-      emcee_linear_grid, x_min, x_max, nbins, lo, hi
-      emcee_linear_grid, sim1_min,sim1_max,4.*nbins, lo_fine, hi_fine
-      pdf_n = histogram(float(sim1), binsize=lo[1]-lo[0]);BINSIZE = float(bin), locations=xbin,)
-      pdf_n_fine = histogram(float(sim1), binsize=lo_fine[1]-lo_fine[0]);BINSIZE = float(bin), locations=xbin)
-      cdf_n = total(pdf_n, /cumulative) / N_ELEMENTS(sim1)
-      cdf_n_fine = total(pdf_n_fine, /cumulative) / N_ELEMENTS(sim1)
-      
-      result=output[j]
-        
-      clevel_start = min(where(cdf_n ge (1.-clevel)/2.))
-      clevel_end = min(where(cdf_n gt (1.+clevel)/2.))
-      if clevel_start eq 50 then clevel_start=clevel_start-1
-      if clevel_end eq 50 then clevel_end=clevel_end-1
-      sim1_lo=lo[clevel_start]
-      sim1_hi=hi[clevel_end]
-      ;print, result, sim1_lo-result, sim1_hi-result
-      ;plothist, sim1, bin=lo[1]-lo[0]
-      
-      clevel_start = min(where(cdf_n_fine ge (1.-clevel)/2.))
-      clevel_end = min(where(cdf_n_fine gt (1.+clevel)/2.))
-      if clevel_start eq 200 then clevel_start=clevel_start-1
-      if clevel_end eq 200 then clevel_end=clevel_end-1
-      sim1_lo=lo_fine[clevel_start]
-      sim1_hi=hi_fine[clevel_end]
-      bin_fine=lo_fine[1]-lo_fine[0]
-      ;temp=size(pdf_n_fine,/DIMENSIONS)
-      ;ntot=double(temp[0])
-      output_error[j,0]=sim1_lo-result
-      output_error[j,1]=sim1_hi-result
-      ;print, result, sim1_lo-result, sim1_hi-result
-      ;pdf_normalize=pdf_n_fine/bin_fine/ntot
-      ;plot,lo_fine,pdf_normalize/max(pdf_normalize)
-      if keyword_set(do_plot) then begin
-        set_plot,'x'
-        window, j
-        plothist, sim1, bin=bin_fine
-        if keyword_set(image_output_path) eq 1 then begin
-          set_plot,'ps'
-          filename=image_output_path+'/histogram'+strtrim(string(j),1)+'.eps'
-          device, /color, bits_per_pixeL=8, font_size=7, $
-               filename=filename, $
-               encapsulated=1, helvetica=1, bold=1, book=1, $
-               xsize=5.0, ysize=4.0, inches=1
-          loadct,13
-          plothist, sim1, bin=bin_fine
-          device, /close
-          set_plot,'x'
-        endif
-      endif
-    endif else begin
+    if finite(output[j], /INFINITY) or finite(output[j], /NAN) then begin
       output_error[j,0]=0
       output_error[j,1]=0
+    endif else begin
+      sim1=mcmc_sim[*,*,j]
+      sim1_min=min(sim1)
+      sim1_max=max(sim1)
+      x_min=sim1_min
+      x_max=sim1_max
+      if x_min ne x_max then begin
+        emcee_linear_grid, x_min, x_max, nbins, lo, hi
+        emcee_linear_grid, sim1_min,sim1_max,4.*nbins, lo_fine, hi_fine
+        pdf_n = histogram(float(sim1), binsize=lo[1]-lo[0]);BINSIZE = float(bin), locations=xbin,)
+        pdf_n_fine = histogram(float(sim1), binsize=lo_fine[1]-lo_fine[0]);BINSIZE = float(bin), locations=xbin)
+        cdf_n = total(pdf_n, /cumulative) / N_ELEMENTS(sim1)
+        cdf_n_fine = total(pdf_n_fine, /cumulative) / N_ELEMENTS(sim1)
+
+        result=output[j]
+
+        clevel_start = min(where(cdf_n ge (1.-clevel)/2.))
+        clevel_end = min(where(cdf_n gt (1.+clevel)/2.))
+        if clevel_start eq 50 then clevel_start=clevel_start-1
+        if clevel_end eq 50 then clevel_end=clevel_end-1
+        sim1_lo=lo[clevel_start]
+        sim1_hi=hi[clevel_end]
+        ;print, result, sim1_lo-result, sim1_hi-result
+        ;plothist, sim1, bin=lo[1]-lo[0]
+
+        clevel_start = min(where(cdf_n_fine ge (1.-clevel)/2.))
+        clevel_end = min(where(cdf_n_fine gt (1.+clevel)/2.))
+        if clevel_start eq 200 then clevel_start=clevel_start-1
+        if clevel_end eq 200 then clevel_end=clevel_end-1
+        sim1_lo=lo_fine[clevel_start]
+        sim1_hi=hi_fine[clevel_end]
+        bin_fine=lo_fine[1]-lo_fine[0]
+        ;temp=size(pdf_n_fine,/DIMENSIONS)
+        ;ntot=double(temp[0])
+        output_error[j,0]=sim1_lo-result
+        output_error[j,1]=sim1_hi-result
+        ;print, result, sim1_lo-result, sim1_hi-result
+        ;pdf_normalize=pdf_n_fine/bin_fine/ntot
+        ;plot,lo_fine,pdf_normalize/max(pdf_normalize)
+        if keyword_set(do_plot) then begin
+          set_plot,'x'
+          window, j
+          plothist, sim1, bin=bin_fine
+          if keyword_set(image_output_path) eq 1 then begin
+            set_plot,'ps'
+            filename=image_output_path+'/histogram'+strtrim(string(j),1)+'.eps'
+            device, /color, bits_per_pixeL=8, font_size=7, $
+              filename=filename, $
+              encapsulated=1, helvetica=1, bold=1, book=1, $
+              xsize=5.0, ysize=4.0, inches=1
+            loadct,13
+            plothist, sim1, bin=bin_fine
+            device, /close
+            set_plot,'x'
+          endif
+        endif
+      endif else begin
+        output_error[j,0]=0
+        output_error[j,1]=0
+      endelse
     endelse
   endfor
   return, output_error
