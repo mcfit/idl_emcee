@@ -6,9 +6,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <title>Search (API Documentation for idl-emcee)</title>
+    <title>emcee_func_errors.pro (API Documentation for idl-emcee)</title>
 
     
+
+    <script type="text/javascript" src="idldoc-resources/js/jquery.js"></script>
+    <script type="text/javascript" src="idldoc-resources/js/copybutton.js"></script>
 
     
     <style type="text/css" media="all">
@@ -157,14 +160,13 @@
 
     <script type="text/javascript">
       function setTitle() {
-        parent.document.title="Search (API Documentation for idl-emcee)";
+        parent.document.title="emcee_func_errors.pro (API Documentation for idl-emcee)";
       }
     </script>
-    <script type="text/javascript" src="libdata.js"></script>
-    <script type="text/javascript" src="idldoc-resources/search.js"></script>
   </head>
 
-  <body onload="setTitle();">
+  <body onload="setTitle();" id="root">
+
     <div class="header">
       <h1>API Documentation for idl-emcee</h1>
       <h2>IDL Library for affine-invariant MCMC Ensemble Sampler</h2>
@@ -181,7 +183,7 @@
           Directory
         </td>
     
-        <td >File</td>
+        <td class="selected">File</td>
     
         
     
@@ -191,8 +193,8 @@
           <a href="categories.html">Categories</a>
         </td>
     
-        <td class="selected">
-          Search
+        <td >
+          <a href="search.html">Search</a>
         </td>
     
         
@@ -219,6 +221,7 @@
     
     
     
+    <p class="localnavbar smallest"><a href="" target="_top">single page</a> | <a href="index.html" target="_top">use frames</a> &nbsp;&nbsp;&nbsp; summary &nbsp;&nbsp;&nbsp; class &nbsp;&nbsp;&nbsp; fields &nbsp;&nbsp;&nbsp; <a href="#routine-details">routine details</a> &nbsp;&nbsp;&nbsp; <a href="#attributes">file attributes</a></p>
     
     
     
@@ -227,97 +230,233 @@
     
     
     
-    <p class="localnavbar smallest"><a href="" target="_top">single page</a> | <a href="index.html" target="_top">use frames</a> &nbsp;&nbsp;&nbsp;</p>
     
 
     <div class="content">
+      <h2 class="directory">./</h2>
+      <h1 class="basename">emcee_func_errors.pro<span class="file-attributes"></span></h1>
+      
 
-    	<h2>Search</h2>
+      
+      
+      
+      <br/>
 
- 				<form name="basicForm">
- 					<input class="text" name="basicText" size="50"/>&nbsp;<input name="send" type="submit" value="Search" onClick="basicsearch()"/>
- 				</form>
+      
 
-       <p class="smaller description">Enter search terms to find in file and routine comment headers. The search is case insensitive.</p>
+      
 
-      <!--
-			<form name="advancedForm">
-				<fieldset>
-					<legend>Advanced search</legend>
-					<table>
-						<tr>
-							<td class="name">
-								<label for="routinename">Routine name</label>
-							</td>
-							<td>
-								<input type="text" name="routinename" id="routinename" size="40">
-							</td>
-						</tr>
+      
 
-						<tr>
-							<td class="name">
-								<label for="comments">Comments</label>
-							</td>
-							<td>
-								<input type="text" name="comments" id="comments" size="40">
-							</td>
-						</tr>
+      
 
-						<tr>
-							<td class="name">
-								<label for="parameters">Parameters</label>
-							</td>
-							<td>
-								<input type="text" name="parameters" id="parameters" size="40">
-							</td>
-						</tr>
+      
 
-						<tr>
-							<td class="name">
-								<label for="authors">Authors</label>
-							</td>
-							<td>
-								<input type="text" name="authors" id="authors" size="40">
-							</td>
-						</tr>
+      
+      <div>
+        <h2>Routines</h2>
+        
 
-						
-						<tr>
-							<td>
-								Categories
-							</td>
-							<td>
-						  	<input type="checkbox" name="anycategory">any&nbsp;category
-								<input type="checkbox" name="nocategories">no&nbsp;categories<br/>
-								
-									<input type="checkbox" name="mcmc"/>mcmc
-								
-									<input type="checkbox" name="uncertainty"/>uncertainty
-								
-						  </td>
-						</tr>
-					  
+      
 
-						<tr>
-							<td></td>
-							<td>
-								<input name="send" type="submit" value="Search" onClick="javascript:advancedsearch()"/>
-					  	</td>
-						</tr>
+      
 
-					</table>
+      
+      </div>
+      
 
-					<div>
-						<p class="smaller description">This is an explanation of what the advanced search does. I'm not sure there really should be an advanced search right now. But it might be useful to be able to search on a particular type of information: author name, category, etc.</p>
-					</div>
-			  </fieldset>
+      
+      <div id="routine-details">
+        
 
-			</form>
-      -->
+        
+        <div class="routine-details details" id="emcee_func_errors">
+          <h2 class="routine-name"><a href="#root" class="top">top</a> emcee_func_errors<span class="routine-attributes"></span></h2>
 
-			<br/>
+          
+          <p class="small categories">MCMC, Uncertainty</p>
+          
 
-    	<div style="border: 1px dotted #9090C0; background: #D0D0FF; margin: 1em 0; padding: 0.5em 1.5em;">
+          <p class="syntax"><code><span class="var">result</span> = emcee_func_errors(<span class="argument"><a href="#emcee_func_errors:p:output">output</a></span><span class="argument">, <a href="#emcee_func_errors:p:mcmc_sim">mcmc_sim</a></span><span class="argument">, <a href="#emcee_func_errors:p:clevel">clevel</a></span><span class="argument"> [, /<a href="#emcee_func_errors:k:do_plot">do_plot</a>]</span><span class="argument"> [, <a href="#emcee_func_errors:k:image_output_path">image_output_path</a>=<span class="var">string</span>]</span>)</code></p>
+
+          
+          <div ><p>     This function returns the uncertainties of the function outputs
+     based on the confidence level.
+</p>
+
+<p></p>
+
+</div>
+          
+
+          
+          <h3>Return value</h3>
+            <div class="small"><p>    type=arrays. This function returns uncertainties.
+</p>
+
+<p></p>
+
+</div>
+          
+
+          
+          <h3>Parameters</h3>
+            <dl>
+              
+              <dt id="emcee_func_errors:p:output">output <span class="smaller">in required type=arrays </span></dt>
+              <dd class="small"><p>                 the output array returned by the calling function.
+</p>
+
+<p></p>
+
+</dd>
+              
+              <dt id="emcee_func_errors:p:mcmc_sim">mcmc_sim <span class="smaller">in required type=arrays </span></dt>
+              <dd class="small"><p>                 the results of the MCMC simulations from emcee_hammer().
+</p>
+
+<p></p>
+
+</dd>
+              
+              <dt id="emcee_func_errors:p:clevel">clevel <span class="smaller">in required type=float </span></dt>
+              <dd class="small"><p>                 the confidence level for the the lower and upper limits.
+                 clevel=0.38292492 ; 0.5-sigma,
+                 clevel=0.68268949 ; 1.0-sigma,
+                 clevel=0.86638560 ; 1.5-sigma,
+                 clevel=0.90       ; 1.645-sigma,
+                 clevel=0.95       ; 1.960-sigma,
+                 clevel=0.95449974 ; 2.0-sigma,
+                 clevel=0.98758067 ; 2.5-sigma,
+                 clevel=0.99       ; 2.575-sigma,
+                 clevel=0.99730020 ; 3.0-sigma,
+                 clevel=0.99953474 ; 3.5-sigma,
+                 clevel=0.99993666 ; 4.0-sigma,
+                 clevel=0.99999320 ; 4.5-sigma,
+                 clevel=0.99999943 ; 5.0-sigma,
+                 clevel=0.99999996 ; 5.5-sigma,
+                 clevel=0.999999998; 6.0-sigma.
+</p>
+
+<p></p>
+
+</dd>
+              
+            </dl>
+          
+
+          
+          <h3>Keywords</h3>
+            <dl>
+              
+              <dt id="emcee_func_errors:k:do_plot">do_plot <span class="smaller">in optional type=boolean </span></dt>
+              <dd class="small"><p>                 set to plot a normalized histogram of the MCMC chain
+</p>
+
+<p></p>
+
+</dd>
+              
+              <dt id="emcee_func_errors:k:image_output_path">image_output_path <span class="smaller">in optional type=string </span></dt>
+              <dd class="small"><p>                               the image output path
+</p>
+
+<p></p>
+
+</dd>
+              
+            </dl>
+          
+
+          
+          <h3>Examples</h3>
+          <div><p>    For example:
+<div><div><code class="listing"><span class="code-prompt">IDL&gt;</span> output_error=emcee_func_errors(output, mcmc_sim, clevel)
+</code></div></div></p>
+
+</div>
+          
+
+          
+          <h3>Author information</h3>
+
+            <dl class="attribute small" summary="Routine author information">
+              
+                <dt>Author:</dt>
+                <dd><p>   Ashkbiz Danehkar
+</p>
+
+<p></p>
+
+</dd>
+              
+
+              
+                <dt>Copyright:</dt>
+                <dd><p>   This library is released under a GNU General Public License.
+</p>
+
+<p></p>
+
+</dd>
+              
+
+              
+                <dt>History:</dt>
+                <dd><p>     15/03/2017, A. Danehkar, IDL code written
+                 Adopted from chain_hist() of sl_emcee
+                 by M.A. Nowak included in isisscripts
+</p>
+
+</dd>
+              
+
+              
+                <dt>Version:</dt>
+                <dd><p>   0.1.0
+</p>
+
+<p></p>
+
+</dd>
+              
+            </dl>
+          
+
+          
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      <div id="attributes">
+        <h2>File attributes</h2>
+
+        <table class="attribute small" summary="File attributes">
+          <tr>
+            <td class="name">Modification date:</td>
+            <td>Sun Sep  6 11:20:01 2020</td>
+          </tr>
+
+          <tr>
+            <td class="name">Lines:</td>
+            <td>64</td>
+          </tr>
+
+          
+          <tr>
+            <td class="name">Docformat:</td>
+            <td>rst rst</td>
+          </tr>
+          
+        </table>
+      </div>
+
+      <div style="border: 1px dotted #9090C0; background: #D0D0FF; margin: 1em 0; padding: 0.5em 1.5em;">
   <p class="smaller">Documentation for the emcee IDL Library. See <a href="https://github.com/mcfit/idl_emcee" target="_top">the GitHub repository</a> for more information about idl_emcee.</p>
 </div>
     </div>
