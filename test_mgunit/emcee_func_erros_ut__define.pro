@@ -6,7 +6,7 @@ function myfunc1, input
   return, [result1, result2]
 end
 
-function emcee_func_erros_ut::test_basic
+function emcee_func_errors_ut::test_basic
   compile_opt strictarr
   
   clevel=.9
@@ -24,7 +24,7 @@ function emcee_func_erros_ut::test_basic
   
   mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, input_err_p, $
                          output, walk_num, iteration_num, use_gaussian)
-  output_error=emcee_func_erros(output, mcmc_sim, clevel)
+  output_error=emcee_func_errors(output, mcmc_sim, clevel)
   
   temp=size(output_error,/DIMENSIONS)
   result=temp[0]
@@ -34,8 +34,8 @@ function emcee_func_erros_ut::test_basic
   return, 1
 end
 
-pro emcee_func_erros_ut__define
+pro emcee_func_errors_ut__define
   compile_opt strictarr
   
-  define = { emcee_func_erros_ut, inherits emceeUTTestCase}
+  define = { emcee_func_errors_ut, inherits emceeUTTestCase}
 end
