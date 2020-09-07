@@ -155,7 +155,7 @@ mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, $
 </pre>
 <p>To determine the upper and lower errors of the function outputs, you need to run:</p>
 <pre class="literal-block">
-output_error=emcee_func_erros(output, mcmc_sim, clevel, do_plot=1)
+output_error=emcee_find_errors(output, mcmc_sim, clevel, do_plot=1)
 </pre>
 <p>which shows the following distribution histograms:</p>
 <img alt="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram0.jpg" src="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram0.jpg" style="width: 400px;" />
