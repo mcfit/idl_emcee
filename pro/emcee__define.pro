@@ -12,7 +12,7 @@
 ;
 ;     IDL> mc=obj_new('emcee')
 ;     IDL> mcmc_sim=mc->hammer('myfunc', input, input_err_m, input_err_p, output)
-;     IDL> output_error=mc->func_errors(output, mcmc_sim)
+;     IDL> output_error=mc->find_errors(output, mcmc_sim)
 ;          
 ;
 ; :Categories:
@@ -157,7 +157,7 @@ function emcee::hammer, fcn, input, input_err_m, input_err_p, output, $
   return, mcmc_sim                        
 end
 
-function emcee::func_errors, output, mcmc_sim, clevel=clevel, do_plot=do_plot, $
+function emcee::find_errors, output, mcmc_sim, clevel=clevel, do_plot=do_plot, $
                             image_output_path=image_output_path
 ;+
 ;     This function returns the uncertainties of the function outputs 
@@ -203,7 +203,7 @@ function emcee::func_errors, output, mcmc_sim, clevel=clevel, do_plot=do_plot, $
 ;
 ;     IDL> mc=obj_new('emcee')
 ;     IDL> mcmc_sim=mc->hammer('myfunc', input, input_err, output)
-;     IDL> output_error=mc->func_errors(output, mcmc_sim, clevel=clevel)
+;     IDL> output_error=mc->find_errors(output, mcmc_sim, clevel=clevel)
 ;
 ; :Categories:
 ;   MCMC, Uncertainty
@@ -231,7 +231,7 @@ function emcee::func_errors, output, mcmc_sim, clevel=clevel, do_plot=do_plot, $
   if keyword_set(clevel) eq 1 then begin
     self.clevel = clevel
   endif              
-  output_error=emcee_func_errors(output, mcmc_sim, self.clevel, $
+  output_error=emcee_find_errors(output, mcmc_sim, self.clevel, $
                                 do_plot=do_plot, image_output_path=image_output_path)    
   return, output_error                 
 end              

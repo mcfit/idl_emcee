@@ -129,7 +129,7 @@ You can create the MCMC sample and propagate the uncertainties of the input para
 
 To determine the upper and lower errors of the function outputs, you need to run:: 
 
-    output_error=emcee_func_errors(output, mcmc_sim, clevel, do_plot=1)
+    output_error=emcee_find_errors(output, mcmc_sim, clevel, do_plot=1)
 
 Alternatively, you could load the **emcee** object class as follows::
 
@@ -138,7 +138,7 @@ Alternatively, you could load the **emcee** object class as follows::
                         input_err_p, output, walk_num=walk_num, $
                         iteration_num=iteration_num, $
                         use_gaussian=use_gaussian)
-    output_error=mc->func_errors(output, mcmc_sim, clevel=clevel, do_plot=1)
+    output_error=mc->find_errors(output, mcmc_sim, clevel=clevel, do_plot=1)
 
 which shows the following distribution histograms:
 

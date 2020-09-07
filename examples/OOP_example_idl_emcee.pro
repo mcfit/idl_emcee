@@ -59,7 +59,7 @@ mcmc_sim=mc->hammer('myfunc11', input, input_err_m, input_err_p, output, $
                     walk_num=walk_num, iteration_num=iteration_num, $
                     use_gaussian=use_gaussian)
 
-output_error=mc->func_errors(output, mcmc_sim, $
+output_error=mc->find_errors(output, mcmc_sim, $
                             clevel=clevel, do_plot=1, $
                             image_output_path=image_output_path)
 
@@ -84,7 +84,7 @@ mcmc_sim=mc->hammer('myfunc12', input, input_err_m, input_err_p, output, $
                     walk_num=walk_num, iteration_num=iteration_num, $
                     use_gaussian=use_gaussian, FUNCTARGS=fcnargs)
 
-output_error=mc->func_errors(output, mcmc_sim, clevel=clevel, do_plot=1)
+output_error=mc->find_errors(output, mcmc_sim, clevel=clevel, do_plot=1)
 
 for i=0, output_num-1 do begin
   print, output[i], transpose(output_error[i,*])
