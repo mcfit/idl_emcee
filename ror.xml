@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for https://mcfit.github.io/idl_emcee/</title>
+  <link>https://mcfit.github.io/idl_emcee/</link>
+
+<item>
+     <link>https://mcfit.github.io/idl_emcee/</link>
+     <title>idl_emcee - IDL/GDL Library for affine-invariant MCMC Hammer</title>
+     <description>idl_emcee - An Interactive Data Language (IDL)/GNU Data Language (GDL) program developed to perform affine-invariant Markov chain Monte Carlo (MCMC) ensemble sampler - maintained by Ashkbiz Danehkar</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/</link>
+     <title>API Documentation for idl-emcee</title>
+     <description>API Documentation for idl-emcee</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/overview.html</link>
+     <title>API Documentation for idl-emcee</title>
+     <description>API Documentation for idl-emcee</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/all-files.html</link>
+     <title>All files (API Documentation for idl-emcee)</title>
+     <description>All files (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>2</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/categories.html</link>
+     <title>Categories (API Documentation for idl-emcee)</title>
+     <description>Categories (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/search.html</link>
+     <title>Search (API Documentation for idl-emcee)</title>
+     <description>Search (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/idldoc-index.html</link>
+     <title>Index (API Documentation for idl-emcee)</title>
+     <description>Index (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/idldoc-warnings.html</link>
+     <title>Warnings (API Documentation for idl-emcee)</title>
+     <description>Warnings (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/idldoc-help.html</link>
+     <title>Help (API Documentation for idl-emcee)</title>
+     <description>Help (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/index.html</link>
+     <title>API Documentation for idl-emcee</title>
+     <description>API Documentation for idl-emcee</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/emcee__define.html</link>
+     <title>emcee__define.pro (API Documentation for idl-emcee)</title>
+     <description>emcee__define.pro (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/emcee_find_errors.html</link>
+     <title>emcee_find_errors.pro (API Documentation for idl-emcee)</title>
+     <description>emcee_find_errors.pro (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/emcee_hammer.html</link>
+     <title>emcee_hammer.pro (API Documentation for idl-emcee)</title>
+     <description>emcee_hammer.pro (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/emcee_initialize.html</link>
+     <title>emcee_initialize.pro (API Documentation for idl-emcee)</title>
+     <description>emcee_initialize.pro (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/emcee_inv_tot_dist.html</link>
+     <title>emcee_inv_tot_dist.pro (API Documentation for idl-emcee)</title>
+     <description>emcee_inv_tot_dist.pro (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/emcee_linear_grid.html</link>
+     <title>emcee_linear_grid.pro (API Documentation for idl-emcee)</title>
+     <description>emcee_linear_grid.pro (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/emcee_update_walk.html</link>
+     <title>emcee_update_walk.pro (API Documentation for idl-emcee)</title>
+     <description>emcee_update_walk.pro (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>3</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>https://mcfit.github.io/idl_emcee/doc/dir-overview.html</link>
+     <title>Directory: ./ (API Documentation for idl-emcee)</title>
+     <description>Directory: ./ (API Documentation for idl-emcee)</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>4</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

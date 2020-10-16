@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/overview.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/all-files.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/categories.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/search.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/idldoc-index.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/idldoc-warnings.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/idldoc-help.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/index.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/emcee__define.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/emcee_find_errors.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/emcee_hammer.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/emcee_initialize.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/emcee_inv_tot_dist.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/emcee_linear_grid.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/emcee_update_walk.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://mcfit.github.io/idl_emcee/doc/dir-overview.html</loc>
+  <lastmod>2020-10-13T22:40:53+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>
