@@ -182,3 +182,11 @@ Documentation
 
 For more information on how to use the API functions from the idl_emcee libray, please read the `API Documentation  <https://mcfit.github.io/idl_emcee/doc>`_ published on `mcfit.github.io/idl_emcee <https://mcfit.github.io/idl_emcee>`_.
 
+Learn More
+==========
+
+==================  =============================================
+**Documentation**   https://mcfit.github.io/idl_emcee/doc/
+**Repository**      https://github.com/mcfit/idl_emcee
+**Issues & Ideas**  https://github.com/mcfit/idl_emcee/issues
+==================  =============================================
