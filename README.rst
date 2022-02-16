@@ -2,8 +2,8 @@
 idl_emcee
 =========
     
-.. image:: https://travis-ci.com/mcfit/idl_emcee.svg?branch=master
-    :target: https://travis-ci.com/mcfit/idl_emcee
+.. image:: https://app.travis-ci.com/mcfit/idl_emcee.svg?branch=master
+    :target: https://app.travis-ci.com/github/mcfit/idl_emcee
     :alt: Build Status
 
 .. image:: https://ci.appveyor.com/api/projects/status/52mh7p2qfa2qnu30?svg=true
