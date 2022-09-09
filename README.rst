@@ -18,8 +18,8 @@ idl_emcee
     :target: https://github.com/mcfit/idl_emcee/blob/master/LICENSE
     :alt: GitHub license
     
-.. image:: https://img.shields.io/badge/DOI-10.5281/zenodo.4495898-blue.svg
-    :target: https://doi.org/10.5281/zenodo.4495898
+.. image:: https://img.shields.io/badge/DOI-10.5281/zenodo.4495897-blue.svg
+    :target: https://doi.org/10.5281/zenodo.4495897
     :alt: Zenodo
 
 **The IDL implementation of the affine-invariant MCMC Hammer**
@@ -193,5 +193,5 @@ Learn More
 **Documentation**   https://mcfit.github.io/idl_emcee/doc/
 **Repository**      https://github.com/mcfit/idl_emcee
 **Issues & Ideas**  https://github.com/mcfit/idl_emcee/issues
-**Archive**         `10.5281/zenodo.4495898 <https://doi.org/10.5281/zenodo.4495898>`_
+**Archive**         `10.5281/zenodo.4495897 <https://doi.org/10.5281/zenodo.4495897>`_
 ==================  =============================================
