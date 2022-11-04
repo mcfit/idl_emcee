@@ -51,7 +51,9 @@ output_num=temp[0]
 walk_num=30
 iteration_num=500
 
-mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, input_err_p, output, walk_num, iteration_num, use_gaussian)
+mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, input_err_p, $
+                      output, walk_num, iteration_num, $ 
+                      use_gaussian, print_progress=1)
 
 output_error=emcee_find_errors(output, mcmc_sim, clevel, do_plot=1, image_output_path=image_output_path)
 
@@ -70,7 +72,9 @@ output_num=temp[0]
 walk_num=30
 iteration_num=100
 
-mcmc_sim=emcee_hammer('myfunc2', input, input_err_m, input_err_p, output, walk_num, iteration_num, use_gaussian, FUNCTARGS=fcnargs)
+mcmc_sim=emcee_hammer('myfunc2', input, input_err_m, input_err_p, $
+                      output, walk_num, iteration_num, $
+                      use_gaussian, print_progress=1, FUNCTARGS=fcnargs)
 
 output_error=emcee_find_errors(output, mcmc_sim, clevel, do_plot=1)
 

@@ -2,7 +2,7 @@
 
 function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
                       walk_num, iteration_num, use_gaussian, $
-                      FUNCTARGS=fcnargs
+                      print_progress=print_progress, FUNCTARGS=fcnargs
 ;+
 ;     This function runs the affine-invariant MCMC Hammer, 
 ;     and returns the MCMC simulations
@@ -13,6 +13,9 @@ function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
 ; :Keywords:
 ;     FUNCTARGS    :  in, not required, type=parameter
 ;                     the function arguments (not used for MCMC)
+;                     
+;     print_progress  :  in, not required, type=parameter
+;                     print the progress percentage of the MCMC sampler.  
 ;
 ; :Params:
 ;     fcn          :  in, required, type=string
@@ -110,6 +113,10 @@ function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
   x_out=dblarr(a_num+b_num,output_num)
   mcmc_sim=dblarr(iteration_num,a_num+b_num,output_num)
   ;sim1=dblarr(iteration_num,a_num+b_num)
+  print_progress_step=iteration_num/10
+  if (i mod print_progress_step eq 0) then begin
+     print, 'Progress (%):', Format='(A,$)'
+  endif
   for i=0L, iteration_num-1 do begin
     ; first half of walkers 
     random_num = i*a_num+indgen(a_num)
@@ -134,7 +141,14 @@ function emcee_hammer, fcn, input, input_err_m, input_err_p, output, $
     for j=0L, output_num-1 do begin
        mcmc_sim[i,*,j]=x_out[*,j]
     endfor
-    print, "Sim loop:", i
+    if keyword_set(print_progress) then begin
+       if (i mod print_progress_step eq 0) then begin
+          print, ' '+strtrim(string(long(float(i)/float(iteration_num)*100)),2), Format='(A,$)'
+       endif
+    endif
   endfor
+  if keyword_set(print_progress) then begin
+     print, ' 100'
+  endif
   return, mcmc_sim
 end
