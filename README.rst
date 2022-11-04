@@ -22,6 +22,10 @@ idl_emcee
     :target: https://doi.org/10.5281/zenodo.4495897
     :alt: Zenodo
 
+.. image:: https://mybinder.org/badge_logo.svg
+ :target: https://mybinder.org/v2/gh/mcfit/idl_emcee/HEAD?labpath=Notebook.ipynb
+
+
 **The IDL implementation of the affine-invariant MCMC Hammer**
 
 Description
@@ -90,7 +94,14 @@ Installation in GDL
 How to Use
 ==========
 
-The Documentation of the IDL functions provides in detail in the *API Documentation* (`mcfit.github.io/idl_emcee/doc <https://mcfit.github.io/idl_emcee/doc>`_). This IDL library creates the MCMC sampling  for given upper and lower uncertainties, and propagates uncertainties of parameters into the function
+The Documentation of the IDL functions provides in detail in the *API Documentation* (`mcfit.github.io/idl_emcee/doc <https://mcfit.github.io/idl_emcee/doc>`_). This IDL library creates the MCMC sampling  for given upper and lower uncertainties, and propagates uncertainties of parameters into the function.
+
+See *Jupyter Notebook*: `Notebook.ipynb <https://github.com/mcfit/idl_emcee/blob/master/Notebook.ipynb>`_
+
+Run *Jupyter Notebook* on `Binder <https://mybinder.org/v2/gh/mcfit/idl_emcee/HEAD?labpath=Notebook.ipynb>`_:
+
+.. image:: https://mybinder.org/badge_logo.svg
+ :target: https://mybinder.org/v2/gh/mcfit/idl_emcee/HEAD?labpath=Notebook.ipynb
 
 You need to define your function. For example::
 
