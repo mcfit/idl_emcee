@@ -36,7 +36,9 @@ Description
 Installation
 ============
  
-* To get this package, you can simply use ``git`` command as follows::
+* To get this package, you can simply use ``git`` command as follows:
+
+.. code-block::
 
         git clone --recursive https://github.com/mcfit/idl_emcee.git
 
@@ -55,20 +57,28 @@ Installation in GDL
 
 *  You can install the GNU Data Language (GDL) if you do not have it on your machine:
 
-    - Linux (Fedora)::
+    - Linux (Fedora):
+    
+    .. code-block::
 
         sudo dnf install gdl
     
-    - Linux (Ubuntu)::
+    - Linux (Ubuntu):
+    
+    .. code-block::
     
         sudo apt-get install gnudatalanguage
     
-    - OS X (`brew <https://brew.sh/>`_)::
+    - OS X (`brew <https://brew.sh/>`_):
+    
+    .. code-block::
 
         brew tap brewsci/science
         brew install gnudatalanguage
 
-    - OS X (`macports <https://www.macports.org/>`_)::
+    - OS X (`macports <https://www.macports.org/>`_):
+    
+    .. code-block::
 
         sudo port selfupdate
         sudo port upgrade libtool
@@ -76,15 +86,21 @@ Installation in GDL
         
     - Windows: You can use the `GNU Data Language for Win32 <https://sourceforge.net/projects/gnudatalanguage-win32/>`_ (Unofficial Version) or you can compile the `GitHub source <https://github.com/gnudatalanguage/gdl>`_ using Visual Studio 2015 as shown in `appveyor.yml <https://github.com/gnudatalanguage/gdl/blob/master/appveyor.yml>`_.
 
-* To install the **idl_emcee** library in GDL, you need to add the path of this package directory to your ``.gdl_startup`` file in your home directory::
+* To install the **idl_emcee** library in GDL, you need to add the path of this package directory to your ``.gdl_startup`` file in your home directory:
+
+  .. code-block::
 
     !PATH=!PATH + ':/home/idl_emcee/pro/'
 
-  You may also need to set ``GDL_STARTUP`` if you have not done in ``.bashrc`` (bash)::
+  You may also need to set ``GDL_STARTUP`` if you have not done in ``.bashrc`` (bash):
+  
+  .. code-block::
 
     export GDL_STARTUP=~/.gdl_startup
 
-  or in ``.tcshrc`` (cshrc)::
+  or in ``.tcshrc`` (cshrc):
+  
+  .. code-block::
 
     setenv GDL_STARTUP ~/.gdl_startup
 
@@ -103,30 +119,40 @@ Run *Jupyter Notebook* on `Binder <https://mybinder.org/v2/gh/mcfit/idl_emcee/HE
 .. image:: https://mybinder.org/badge_logo.svg
  :target: https://mybinder.org/v2/gh/mcfit/idl_emcee/HEAD?labpath=Notebook.ipynb
 
-You need to define your function. For example::
+You need to define your function. For example:
 
+.. code-block:: idl
+      
     function myfunc1, input
       result1 = total(input)
       result2 = input[1]^input[0]
       return, [result1, result2]
     end
 
-and use the appropriate confidence level and uncertainty distribution. For example, for a 1.645-sigma standard deviation with a uniform distribution::
+and use the appropriate confidence level and uncertainty distribution. For example, for a 1.645-sigma standard deviation with a uniform distribution:
+
+.. code-block:: idl
 
     clevel=.9; 1.645-sigma
     use_gaussian=0 ; uniform distribution from min value to max value
 
-for a 1-sigma standard deviation with a Gaussian distribution::
+for a 1-sigma standard deviation with a Gaussian distribution:
+
+.. code-block:: idl
 
     clevel=0.68268949 ; 1.0-sigma
     use_gaussian=1 ; gaussian distribution from min value to max value
 
-and specify the number of walkers and the number of iterations::
+and specify the number of walkers and the number of iterations:
+
+.. code-block:: idl
 
     walk_num=30
     iteration_num=100
 
-Now you provide the given upper and lower uncertainties of the input parameters::
+Now you provide the given upper and lower uncertainties of the input parameters:
+
+.. code-block:: idl
 
     input=[1. , 2.]
     input_err=[0.2, 0.5]
@@ -136,17 +162,23 @@ Now you provide the given upper and lower uncertainties of the input parameters:
     temp=size(output,/DIMENSIONS)
     output_num=temp[0]
 
-You can create the MCMC sample and propagate the uncertainties of the input parameters into your defined functions as follows::
+You can create the MCMC sample and propagate the uncertainties of the input parameters into your defined functions as follows:
+
+.. code-block:: idl
 
     mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, $
                           input_err_p, output, walk_num, $
                           iteration_num, use_gaussian)
 
-To determine the upper and lower errors of the function outputs, you need to run:: 
+To determine the upper and lower errors of the function outputs, you need to run:
+
+.. code-block:: idl
 
     output_error=emcee_find_errors(output, mcmc_sim, clevel, do_plot=1)
 
-Alternatively, you could load the **emcee** object class as follows::
+Alternatively, you could load the **emcee** object class as follows:
+
+.. code-block:: idl
 
     mc=obj_new('emcee')
     mcmc_sim=mc->hammer('myfunc1', input, input_err_m, $
@@ -163,18 +195,24 @@ which shows the following distribution histograms:
 .. image:: https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram1.jpg
     :width: 100
 
-To print the results::
+To print the results:
+
+.. code-block:: idl
 
     for i=0, output_num-1 do begin
       print, output[i], transpose(output_error[i,*])
     endfor
 
-which provide the upper and lower limits on each parameter::
+which provide the upper and lower limits on each parameter:
+
+.. code-block::
 
     3.00000     -0.35801017      0.35998471
     2.00000     -0.37573196      0.36297235
 
-For other standard deviation, you should use different confidence levels::
+For other standard deviation, you should use different confidence levels:
+
+.. code-block:: idl
 
     clevel=0.38292492 ; 0.5-sigma
     clevel=0.68268949 ; 1.0-sigma
