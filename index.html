@@ -18,8 +18,8 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">idl_emcee</h1>
-      <h2 class="project-tagline">idl_emcee - IDL/GDL Library for affine-invariant MCMC Hammer</h2>
+      <h2 class="project-name">idl_emcee</h2>
+      <h3 class="project-tagline">idl_emcee - IDL/GDL Library for affine-invariant MCMC Hammer</h3>
       <a href="https://github.com/mcfit/idl_emcee" class="btn">View on GitHub</a>
       <a href="https://github.com/mcfit/idl_emcee/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/mcfit/idl_emcee/tarball/master" class="btn">Download .tar.gz</a>
@@ -27,8 +27,8 @@
     </section>
 
     <section class="main-content">
-      <h1>
-<a id="idl-emcee" class="anchor" href="#idl-emcee" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>idl_emcee</h1>
+      <h2>
+<a id="idl-emcee" class="anchor" href="#idl-emcee" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>idl_emcee</h2>
 
 <p><strong>idl_emcee</strong> - IDL/GDL Library for affine-invariant MCMC Hammer</p>
 
@@ -37,20 +37,22 @@
 <a class="reference external image-reference" href="https://ci.appveyor.com/project/danehkar/idl-emcee"><img alt="Build Status" src="https://ci.appveyor.com/api/projects/status/52mh7p2qfa2qnu30?svg=true" /></a>
 <a class="reference external image-reference" href="http://mybinder.org/repo/mcfit/idl_emcee"><img alt="Binder" src="https://mybinder.org/badge.svg" /></a>
 <a class="reference external image-reference" href="https://github.com/mcfit/idl_emcee/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
-
+<a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.4495897"><object data="https://img.shields.io/badge/DOI-10.5281/zenodo.4495897-blue.svg" type="image/svg+xml">Zenodo</object></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/mcfit/idl_emcee/HEAD?labpath=Notebook.ipynb"><object data="https://mybinder.org/badge_logo.svg" type="image/svg+xml">https://mybinder.org/badge_logo.svg</object></a>
+<div class="section" id="description">
 <h2>Description</h2>
 <p><strong>idl_emcee</strong> is an <a class="reference external" href="http://www.harrisgeospatial.com/ProductsandSolutions/GeospatialProducts/IDL.aspx">Interactive Data Language</a> (IDL)/<a class="reference external" href="http://gnudatalanguage.sourceforge.net/">GNU Data Language</a> (GDL) implementation of the <em>affine-invariant Markov chain Monte Carlo (MCMC) ensemble sampler</em>, based on <a class="reference external" href="https://github.com/mcfit/sl_emcee">sl_emcee</a> by <a class="reference external" href="http://space.mit.edu/home/mnowak/isis_vs_xspec/">M. A. Nowak</a>, an S-Lang/<a class="reference external" href="http://space.mit.edu/cxc/isis/">ISIS</a> implementation of the MCMC Hammer proposed by <a class="reference external" href="http://dx.doi.org/10.2140/camcos.2010.5.65">Goodman &amp; Weare (2010)</a>, and then implemented in Python (<a class="reference external" href="https://github.com/dfm/emcee">emcee</a>) by <a class="reference external" href="http://adsabs.harvard.edu/abs/2013PASP..125..306F">Foreman-Mackey et al. (2013)</a>.</p>
 </div>
 <div class="section" id="installation">
 <h2>Installation</h2>
-<ul>
-<li><p class="first">To get this package, you can simply use <tt class="docutils literal">git</tt> command as follows:</p>
-<pre class="literal-block">
+<ul class="simple">
+<li>To get this package, you can simply use <tt class="docutils literal">git</tt> command as follows:</li>
+</ul>
+<pre class="code literal-block">
 git clone --recursive https://github.com/mcfit/idl_emcee.git
 </pre>
-</li>
-<li><p class="first">This package does not include any dependent packages in the current version.</p>
-</li>
+<ul class="simple">
+<li>This package does not include any dependent packages in the current version.</li>
 </ul>
 <div class="section" id="installation-in-idl">
 <h3>Installation in IDL</h3>
@@ -64,138 +66,175 @@ git clone --recursive https://github.com/mcfit/idl_emcee.git
 <ul>
 <li><p class="first">You can install the GNU Data Language (GDL) if you do not have it on your machine:</p>
 <blockquote>
-<ul>
-<li><p class="first">Linux (Fedora):</p>
-<pre class="literal-block">
+<ul class="simple">
+<li>Linux (Fedora):</li>
+</ul>
+<pre class="code literal-block">
 sudo dnf install gdl
 </pre>
-</li>
-<li><p class="first">Linux (Ubuntu):</p>
-<pre class="literal-block">
+<ul class="simple">
+<li>Linux (Ubuntu):</li>
+</ul>
+<pre class="code literal-block">
 sudo apt-get install gnudatalanguage
 </pre>
-</li>
-<li><p class="first">OS X (<a class="reference external" href="https://brew.sh/">brew</a>):</p>
-<pre class="literal-block">
+<ul class="simple">
+<li>OS X (<a class="reference external" href="https://brew.sh/">brew</a>):</li>
+</ul>
+<pre class="code literal-block">
 brew tap brewsci/science
 brew install gnudatalanguage
 </pre>
-</li>
-<li><p class="first">OS X (<a class="reference external" href="https://www.macports.org/">macports</a>):</p>
-<pre class="literal-block">
+<ul class="simple">
+<li>OS X (<a class="reference external" href="https://www.macports.org/">macports</a>):</li>
+</ul>
+<pre class="code literal-block">
 sudo port selfupdate
 sudo port upgrade libtool
 sudo port install gnudatalanguage
 </pre>
-</li>
-<li><p class="first">Windows: You can use the <a class="reference external" href="https://sourceforge.net/projects/gnudatalanguage-win32/">GNU Data Language for Win32</a> (Unofficial Version) or you can compile the <a class="reference external" href="https://github.com/gnudatalanguage/gdl">GitHub source</a> using Visual Studio 2015 as shown in <a class="reference external" href="https://github.com/gnudatalanguage/gdl/blob/master/appveyor.yml">appveyor.yml</a>.</p>
-</li>
+<ul class="simple">
+<li>Windows: You can use the <a class="reference external" href="https://sourceforge.net/projects/gnudatalanguage-win32/">GNU Data Language for Win32</a> (Unofficial Version) or you can compile the <a class="reference external" href="https://github.com/gnudatalanguage/gdl">GitHub source</a> using Visual Studio 2015 as shown in <a class="reference external" href="https://github.com/gnudatalanguage/gdl/blob/master/appveyor.yml">appveyor.yml</a>.</li>
 </ul>
 </blockquote>
 </li>
 <li><p class="first">To install the <strong>idl_emcee</strong> library in GDL, you need to add the path of this package directory to your <tt class="docutils literal">.gdl_startup</tt> file in your home directory:</p>
-<pre class="literal-block">
+<pre class="code literal-block">
 !PATH=!PATH + ':/home/idl_emcee/pro/'
 </pre>
 <p>You may also need to set <tt class="docutils literal">GDL_STARTUP</tt> if you have not done in <tt class="docutils literal">.bashrc</tt> (bash):</p>
-<pre class="literal-block">
+<pre class="code literal-block">
 export GDL_STARTUP=~/.gdl_startup
 </pre>
 <p>or in <tt class="docutils literal">.tcshrc</tt> (cshrc):</p>
-<pre class="literal-block">
+<pre class="code literal-block">
 setenv GDL_STARTUP ~/.gdl_startup
 </pre>
 </li>
-<li><p class="first">This package requires GDL version 0.9.8 or later.</p>
+<li><p class="first">This package requires GDL version 0.9.9 or later.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="section" id="how-to-use">
-<h1>How to Use</h1>
-<p>The Documentation of the IDL functions provides in detail in the <em>API Documentation</em> (<a class="reference external" href="https://mcfit.github.io/idl_emcee/doc">mcfit.github.io/idl_emcee/doc</a>). This IDL library creates the MCMC sampling  for given upper and lower uncertainties, and propagates uncertainties of parameters into the function</p>
+<h2>How to Use</h2>
+<p>The Documentation of the IDL functions provides in detail in the <em>API Documentation</em> (<a class="reference external" href="https://mcfit.github.io/idl_emcee/doc">mcfit.github.io/idl_emcee/doc</a>). This IDL library creates the MCMC sampling  for given upper and lower uncertainties, and propagates uncertainties of parameters into the function.</p>
+<p>See <em>Jupyter Notebook</em>: <a class="reference external" href="https://github.com/mcfit/idl_emcee/blob/master/Notebook.ipynb">Notebook.ipynb</a></p>
+<p>Run <em>Jupyter Notebook</em> on <a class="reference external" href="https://mybinder.org/v2/gh/mcfit/idl_emcee/HEAD?labpath=Notebook.ipynb">Binder</a>:</p>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/mcfit/idl_emcee/HEAD?labpath=Notebook.ipynb"><object data="https://mybinder.org/badge_logo.svg" type="image/svg+xml">https://mybinder.org/badge_logo.svg</object></a>
 <p>You need to define your function. For example:</p>
-<pre class="literal-block">
-function myfunc1, input
-  result1 = total(input)
-  result2 = input[1]^input[0]
-  return, [result1, result2]
-end
+<pre class="code idl literal-block">
+<span class="keyword">function</span><span class="whitespace"> </span>myfunc1,<span class="whitespace"> </span>input<span class="whitespace">
+  </span>result1<span class="whitespace"> </span><span class="operator">=</span><span class="whitespace"> </span><span class="name builtin">total</span>(input)<span class="whitespace">
+  </span>result2<span class="whitespace"> </span><span class="operator">=</span><span class="whitespace"> </span>input[<span class="literal number integer">1</span>]<span class="operator">^</span>input[<span class="literal number integer">0</span>]<span class="whitespace">
+  </span><span class="name builtin">return</span>,<span class="whitespace"> </span>[result1,<span class="whitespace"> </span>result2]<span class="whitespace">
+</span><span class="keyword">end</span>
 </pre>
 <p>and use the appropriate confidence level and uncertainty distribution. For example, for a 1.645-sigma standard deviation with a uniform distribution:</p>
-<pre class="literal-block">
-clevel=.9; 1.645-sigma
-use_gaussian=0 ; uniform distribution from min value to max value
+<pre class="code idl literal-block">
+clevel<span class="operator">=</span>.<span class="literal number integer">9</span>;<span class="whitespace"> </span><span class="literal number float">1.645</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>use_gaussian<span class="operator">=</span><span class="literal number integer">0</span><span class="whitespace"> </span>;<span class="whitespace"> </span>uniform<span class="whitespace"> </span>distribution<span class="whitespace"> </span>from<span class="whitespace"> </span><span class="name builtin">min</span><span class="whitespace"> </span>value<span class="whitespace"> </span>to<span class="whitespace"> </span><span class="name builtin">max</span><span class="whitespace"> </span>value
 </pre>
 <p>for a 1-sigma standard deviation with a Gaussian distribution:</p>
-<pre class="literal-block">
-clevel=0.68268949 ; 1.0-sigma
-use_gaussian=1 ; gaussian distribution from min value to max value
+<pre class="code idl literal-block">
+clevel<span class="operator">=</span><span class="literal number float">0.68268949</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">1.0</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>use_gaussian<span class="operator">=</span><span class="literal number integer">1</span><span class="whitespace"> </span>;<span class="whitespace"> </span>gaussian<span class="whitespace"> </span>distribution<span class="whitespace"> </span>from<span class="whitespace"> </span><span class="name builtin">min</span><span class="whitespace"> </span>value<span class="whitespace"> </span>to<span class="whitespace"> </span><span class="name builtin">max</span><span class="whitespace"> </span>value
 </pre>
 <p>and specify the number of walkers and the number of iterations:</p>
-<pre class="literal-block">
-walk_num=30
-iteration_num=100
+<pre class="code idl literal-block">
+walk_num<span class="operator">=</span><span class="literal number integer">30</span><span class="whitespace">
+</span>iteration_num<span class="operator">=</span><span class="literal number integer">100</span>
 </pre>
 <p>Now you provide the given upper and lower uncertainties of the input parameters:</p>
-<pre class="literal-block">
-input=[1. , 2.]
-input_err=[0.2, 0.5]
-input_err_p=input_err
-input_err_m=-input_err
-output=myfunc1(input)
-temp=size(output,/DIMENSIONS)
-output_num=temp[0]
+<pre class="code idl literal-block">
+input<span class="operator">=</span>[<span class="literal number integer">1</span>.<span class="whitespace"> </span>,<span class="whitespace"> </span><span class="literal number integer">2</span>.]<span class="whitespace">
+</span>input_err<span class="operator">=</span>[<span class="literal number float">0.2</span>,<span class="whitespace"> </span><span class="literal number float">0.5</span>]<span class="whitespace">
+</span>input_err_p<span class="operator">=</span>input_err<span class="whitespace">
+</span>input_err_m<span class="operator">=-</span>input_err<span class="whitespace">
+</span>output<span class="operator">=</span>myfunc1(input)<span class="whitespace">
+</span>temp<span class="operator">=</span><span class="name builtin">size</span>(output,<span class="operator">/</span>DIMENSIONS)<span class="whitespace">
+</span>output_num<span class="operator">=</span>temp[<span class="literal number integer">0</span>]
 </pre>
 <p>You can create the MCMC sample and propagate the uncertainties of the input parameters into your defined functions as follows:</p>
-<pre class="literal-block">
-mcmc_sim=emcee_hammer('myfunc1', input, input_err_m, $
-                      input_err_p, output, walk_num, $
-                      iteration_num, use_gaussian)
+<pre class="code idl literal-block">
+mcmc_sim<span class="operator">=</span>emcee_hammer(<span class="literal string single">'myfunc1'</span>,<span class="whitespace"> </span>input,<span class="whitespace"> </span>input_err_m,<span class="whitespace"> </span>$<span class="whitespace">
+                      </span>input_err_p,<span class="whitespace"> </span>output,<span class="whitespace"> </span>walk_num,<span class="whitespace"> </span>$<span class="whitespace">
+                      </span>iteration_num,<span class="whitespace"> </span>use_gaussian)
 </pre>
 <p>To determine the upper and lower errors of the function outputs, you need to run:</p>
-<pre class="literal-block">
-output_error=emcee_find_errors(output, mcmc_sim, clevel, do_plot=1)
+<pre class="code idl literal-block">
+output_error<span class="operator">=</span>emcee_find_errors(output,<span class="whitespace"> </span>mcmc_sim,<span class="whitespace"> </span>clevel,<span class="whitespace"> </span>do_plot<span class="operator">=</span><span class="literal number integer">1</span>)
+</pre>
+<p>Alternatively, you could load the <strong>emcee</strong> object class as follows:</p>
+<pre class="code idl literal-block">
+mc<span class="operator">=</span><span class="name builtin">obj_new</span>(<span class="literal string single">'emcee'</span>)<span class="whitespace">
+</span>mcmc_sim<span class="operator">=</span>mc<span class="operator">-&gt;</span>hammer(<span class="literal string single">'myfunc1'</span>,<span class="whitespace"> </span>input,<span class="whitespace"> </span>input_err_m,<span class="whitespace"> </span>$<span class="whitespace">
+                    </span>input_err_p,<span class="whitespace"> </span>output,<span class="whitespace"> </span>walk_num<span class="operator">=</span>walk_num,<span class="whitespace"> </span>$<span class="whitespace">
+                    </span>iteration_num<span class="operator">=</span>iteration_num,<span class="whitespace"> </span>$<span class="whitespace">
+                    </span>use_gaussian<span class="operator">=</span>use_gaussian)<span class="whitespace">
+</span>output_error<span class="operator">=</span>mc<span class="operator">-&gt;</span>find_errors(output,<span class="whitespace"> </span>mcmc_sim,<span class="whitespace"> </span>clevel<span class="operator">=</span>clevel,<span class="whitespace"> </span>do_plot<span class="operator">=</span><span class="literal number integer">1</span>)
 </pre>
 <p>which shows the following distribution histograms:</p>
-<img alt="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram0.jpg" src="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram0.jpg" style="width: 400px;" />
-<img alt="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram1.jpg" src="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram1.jpg" style="width: 400px;" />
+<img alt="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram0.jpg" src="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram0.jpg" style="width: 100px;" />
+<img alt="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram1.jpg" src="https://raw.githubusercontent.com/mcfit/idl_emcee/master/examples/images/histogram1.jpg" style="width: 100px;" />
 <p>To print the results:</p>
-<pre class="literal-block">
-for i=0, output_num-1 do begin
-  print, output[i], transpose(output_error[i,*])
-endfor
+<pre class="code idl literal-block">
+<span class="keyword">for</span><span class="whitespace"> </span>i<span class="operator">=</span><span class="literal number integer">0</span>,<span class="whitespace"> </span>output_num<span class="operator">-</span><span class="literal number integer">1</span><span class="whitespace"> </span><span class="keyword">do</span><span class="whitespace"> </span><span class="keyword">begin</span><span class="whitespace">
+  </span><span class="name builtin">print</span>,<span class="whitespace"> </span>output[i],<span class="whitespace"> </span><span class="name builtin">transpose</span>(output_error[i,<span class="operator">*</span>])<span class="whitespace">
+</span><span class="keyword">endfor</span>
 </pre>
 <p>which provide the upper and lower limits on each parameter:</p>
-<pre class="literal-block">
+<pre class="code literal-block">
 3.00000     -0.35801017      0.35998471
 2.00000     -0.37573196      0.36297235
 </pre>
 <p>For other standard deviation, you should use different confidence levels:</p>
-<pre class="literal-block">
-clevel=0.38292492 ; 0.5-sigma
-clevel=0.68268949 ; 1.0-sigma
-clevel=0.86638560 ; 1.5-sigma
-clevel=0.90       ; 1.645-sigma
-clevel=0.95       ; 1.960-sigma
-clevel=0.95449974 ; 2.0-sigma
-clevel=0.98758067 ; 2.5-sigma
-clevel=0.99       ; 2.575-sigma
-clevel=0.99730020 ; 3.0-sigma
-clevel=0.99953474 ; 3.5-sigma
-clevel=0.99993666 ; 4.0-sigma
-clevel=0.99999320 ; 4.5-sigma
-clevel=0.99999943 ; 5.0-sigma
-clevel=0.99999996 ; 5.5-sigma
-clevel=0.999999998; 6.0-sigma
+<pre class="code idl literal-block">
+clevel<span class="operator">=</span><span class="literal number float">0.38292492</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">0.5</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.68268949</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">1.0</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.86638560</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">1.5</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.90</span><span class="whitespace">       </span>;<span class="whitespace"> </span><span class="literal number float">1.645</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.95</span><span class="whitespace">       </span>;<span class="whitespace"> </span><span class="literal number float">1.960</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.95449974</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">2.0</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.98758067</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">2.5</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.99</span><span class="whitespace">       </span>;<span class="whitespace"> </span><span class="literal number float">2.575</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.99730020</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">3.0</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.99953474</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">3.5</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.99993666</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">4.0</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.99999320</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">4.5</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.99999943</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">5.0</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.99999996</span><span class="whitespace"> </span>;<span class="whitespace"> </span><span class="literal number float">5.5</span><span class="operator">-</span>sigma<span class="whitespace">
+</span>clevel<span class="operator">=</span><span class="literal number float">0.999999998</span>;<span class="whitespace"> </span><span class="literal number float">6.0</span><span class="operator">-</span>sigma
 </pre>
 </div>
 <div class="section" id="documentation">
-<h1>Documentation</h1>
+<h2>Documentation</h2>
 <p>For more information on how to use the API functions from the idl_emcee libray, please read the <a class="reference external" href="https://mcfit.github.io/idl_emcee/doc">API Documentation</a> published on <a class="reference external" href="https://mcfit.github.io/idl_emcee">mcfit.github.io/idl_emcee</a>.</p>
 </div>
+<div class="section" id="learn-more">
+<h2>Learn More</h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><strong>Documentation</strong></td>
+<td><a class="reference external" href="https://mcfit.github.io/idl_emcee/doc/">https://mcfit.github.io/idl_emcee/doc/</a></td>
+</tr>
+<tr><td><strong>Repository</strong></td>
+<td><a class="reference external" href="https://github.com/mcfit/idl_emcee">https://github.com/mcfit/idl_emcee</a></td>
+</tr>
+<tr><td><strong>Issues &amp; Ideas</strong></td>
+<td><a class="reference external" href="https://github.com/mcfit/idl_emcee/issues">https://github.com/mcfit/idl_emcee/issues</a></td>
+</tr>
+<tr><td><strong>Archive</strong></td>
+<td><a class="reference external" href="https://doi.org/10.5281/zenodo.4495897">10.5281/zenodo.4495897</a></td>
+</tr>
+</tbody>
+</table>
 </div>
-
+</div>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/mcfit/idl_emcee">idl_emcee</a> is maintained by <a href="https://github.com/danehkar">Ashkbiz Danehkar</a>.</span>
 
