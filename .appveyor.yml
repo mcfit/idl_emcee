@@ -4,6 +4,7 @@ image:
 
 clone_depth: 3
 
+# Switch to Script mode
 build: off
 
 init:
@@ -16,7 +17,9 @@ install:
   - git submodule update --init --recursive
   - export GDL_STARTUP=$APPVEYOR_BUILD_FOLDER/test_appveyor/.gdl_startup
 
-# Your actual build/test steps
+build_script:
+  - echo "No compilation needed — skipping build phase"
+
 test_script:
   # Verify GDL installation
   - gdl --version
