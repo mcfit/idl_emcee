@@ -235,6 +235,25 @@ Documentation
 
 For more information on how to use the API functions from the idl_emcee libray, please read the `API Documentation  <https://mcfit.github.io/idl_emcee/doc>`_ published on `mcfit.github.io/idl_emcee <https://mcfit.github.io/idl_emcee>`_.
 
+Acknowledgement
+===============
+
+If you employ **idl_emcee** in your work, please acknowledge the usage by citing the following reference:
+	
+* Danehkar, A. (2025). idl_emcee: IDL Implementation of the MCMC Ensemble Sampler. *ASP Conf. Ser.*, **538**, 385. doi: `10.26624/BIVU8108 <https://doi.org/10.26624/BIVU8108>`_ ads: `2025ASPC..538..385D <https://ui.adsabs.harvard.edu/abs/2025ASPC..538..385D/abstract>`_.
+
+.. code-block:: bibtex
+
+   @article{Danehkar2025,
+     author = {{Danehkar}, Ashkbiz,
+     title = {idl\_emcee: IDL Implementation of the MCMC Ensemble Sampler},
+     journal = {ASP Conf. Ser.},
+     volume = {538},
+     pages = {385},
+     year = {2025},
+     doi = {10.26624/BIVU8108}
+   }
+
 Learn More
 ==========
 
