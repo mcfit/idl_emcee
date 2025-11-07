@@ -261,5 +261,6 @@ Learn More
 **Documentation**   https://mcfit.github.io/idl_emcee/doc/
 **Repository**      https://github.com/mcfit/idl_emcee
 **Issues & Ideas**  https://github.com/mcfit/idl_emcee/issues
+**DOI**             `10.26624/BIVU8108 <https://doi.org/10.26624/BIVU8108>`_
 **Archive**         `10.5281/zenodo.4495897 <https://doi.org/10.5281/zenodo.4495897>`_
 ==================  =============================================
