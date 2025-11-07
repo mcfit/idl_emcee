@@ -1,5 +1,5 @@
 image:
-- Visual Studio 2017
+#- Visual Studio 2017
 - Ubuntu
 
 clone_depth: 3
@@ -14,6 +14,10 @@ install:
   - export DISPLAY=':99.0'
   - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
   - git submodule update --init --recursive
-  - export GDL_STARTUP=/home/appveyor/projects/idl_emcee/test_appveyor/.gdl_startup
+  - export GDL_STARTUP=$APPVEYOR_BUILD_FOLDER/test_appveyor/.gdl_startup
 
-
+# Your actual build/test steps
+test_script:
+  # Verify GDL installation
+  - gdl --version
+  
